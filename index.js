@@ -1,7 +1,5 @@
 //Run with npm start
 
-const PORT = process.env.PORT || 3000;
-
 const axios = require('axios')
 const cheerio = require('cheerio')
 const express = require('express')
@@ -14,10 +12,13 @@ app.use(cors())
 const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
 const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
+
+let port = process.env.PORT || 3000;
+if(port == null || port == ""){
+    port = 3000;
+}
 //app.METHOD(PATH, HANDLER)
-app.listen(PORT, function (){
-    console.log('${PORT}')
-})
+app.listen(port);
 app.get('/record', (req, res) => {
     axios(schedule)
         .then(response => {
