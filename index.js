@@ -30,7 +30,7 @@ app.get('/', (req, res, next) => {
             version: '0.1.0'
         }
     });
-
+    
 app.get('/record', (req, res) => {
     axios(schedule)
         .then(response => {
