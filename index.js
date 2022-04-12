@@ -18,7 +18,9 @@ if(port == null || port == ""){
     port = 3000;
 }
 //app.METHOD(PATH, HANDLER)
-app.listen(port);
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+});
 app.get('/record', (req, res) => {
     axios(schedule)
         .then(response => {
