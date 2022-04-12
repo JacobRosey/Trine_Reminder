@@ -1,6 +1,6 @@
 //Run with npm start
 
-let port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const axios = require('axios')
 const cheerio = require('cheerio')
@@ -15,8 +15,8 @@ const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
 const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
 //app.METHOD(PATH, HANDLER)
-app.listen(port, function (){
-    console.log(port)
+app.listen(PORT, function (){
+    console.log('${PORT}')
 })
 app.get('/record', (req, res) => {
     axios(schedule)
