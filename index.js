@@ -23,176 +23,185 @@ app.listen(port, () => {
 });
 app.get('/', (req, res, next) => {
 
-        
-    app.get('/record', (req, res) => {
-        axios(schedule)
-            .then(response => {
-                const html = response.data
-                const $ = cheerio.load(html)
-                const recordArr = []
+    res.status(200)({
+        status: 'success',
+        data: {
+            name: 'trine-scraper',
+            version: '0.1.0'
+        }
+    });
 
-                $('.clearfix .cat .value', html).each(function(){
-                    var records = $(this).text()
-                    recordArr.push(records)
-                })
-                res.json(recordArr)
-            }).catch(err => console.log(err))
-    })
-
-    app.get('/stats', (req, res) => {
-        axios(stats)
+app.get('/record', (req, res) => {
+    axios(schedule)
         .then(response => {
             const html = response.data
             const $ = cheerio.load(html)
-            const statDesc = []
-            const statNum = []
-            const statArr = [statDesc, statNum]
+            const recordArr = []
 
-            $('.stat-title', html).each(function(){
-                var stat1 = $(this).text()
-                statDesc.push(stat1)
+            $('.clearfix .cat .value', html).each(function(){
+                var records = $(this).text()
+                recordArr.push(records)
             })
-            $('.stat-value', html).each(function(){
-                var stat2 = $(this).text()
-                statNum.push(stat2)
-            })
-            res.json(statArr)
+            res.json(recordArr)
         }).catch(err => console.log(err))
-    })
+})
 
-
-    app.get('/schedule', (req, res) => {
-
-    axios(schedule)
+app.get('/stats', (req, res) => {
+    axios(stats)
     .then(response => {
         const html = response.data
         const $ = cheerio.load(html)
-        const gameDate = []
-        const gameOpp = []
-        const gameStatus = []
-        const gameResult = []
-        const games = [gameDate, gameOpp, gameStatus]
+        const statDesc = []
+        const statNum = []
+        const statArr = [statDesc, statNum]
 
-        //Find all elements of given class names within each event row element
-        $('.e_date', html).each(function(){
-            var date = $(this).text()
-            gameDate.push(date)
+        $('.stat-title', html).each(function(){
+            var stat1 = $(this).text()
+            statDesc.push(stat1)
         })
-        $('.team-name', html).each(function(){
-            var opponent = $(this).text()
-            gameOpp.push(opponent)
+        $('.stat-value', html).each(function(){
+            var stat2 = $(this).text()
+            statNum.push(stat2)
         })
-        $('.e_status', html).each(function(){
-            var status = $(this).text()
-            gameStatus.push(status)
-        })
-        $('.e_result', html).each(function (){
-            var result = $(this).text()
-            gameResult.push(result)
-        })
+        res.json(statArr)
+    }).catch(err => console.log(err))
+})
 
-        schedApp.cleanData(games,gameResult);
-        res.json(games)
-        }).catch(err => console.log(err))
+
+app.get('/schedule', (req, res) => {
+
+axios(schedule)
+.then(response => {
+    const html = response.data
+    const $ = cheerio.load(html)
+    const gameDate = []
+    const gameOpp = []
+    const gameStatus = []
+    const gameResult = []
+    const games = [gameDate, gameOpp, gameStatus]
+
+    //Find all elements of given class names within each event row element
+    $('.e_date', html).each(function(){
+        var date = $(this).text()
+        gameDate.push(date)
+    })
+    $('.team-name', html).each(function(){
+        var opponent = $(this).text()
+        gameOpp.push(opponent)
+    })
+    $('.e_status', html).each(function(){
+        var status = $(this).text()
+        gameStatus.push(status)
+    })
+    $('.e_result', html).each(function (){
+        var result = $(this).text()
+        gameResult.push(result)
     })
 
-    app.get('/news', (req, res) => {
+    schedApp.cleanData(games,gameResult);
+    res.json(games)
+    }).catch(err => console.log(err))
+})
 
-    axios(news)
-    .then(response => {
-        const html = response.data
-        const $ = cheerio.load(html)
-        const newsHeadline = []
-        const newsDate = []
-        const newsSrc = []
-        const articles = [newsHeadline, newsDate, newsSrc]
+app.get('/news', (req, res) => {
 
-        //Only grabbing the 5 most recent articles
-        $('.title',html).each(function (){
-            const headline = $(this).text()
-            if(newsHeadline.length < 5){
-                newsHeadline.push(headline)
-            }
-        })
-        $('.details .date', html).each(function(){
-            const date = $(this).text()
-            if(newsDate.length < 5){
-                newsDate.push(date)
-            }
-        })
-        $('.title-box', html).each(function(){
-            const src = $(this).attr('href')
-            if(newsSrc.length < 5){
-                newsSrc.push("https://trinethunder.com/"+src)
-            } 
-        }) 
-        newsApp.logNews(articles)
-        res.json(articles)
-        }).catch(err => console.log(err))
+axios(news)
+.then(response => {
+    const html = response.data
+    const $ = cheerio.load(html)
+    const newsHeadline = []
+    const newsDate = []
+    const newsSrc = []
+    const articles = [newsHeadline, newsDate, newsSrc]
+
+    //Only grabbing the 5 most recent articles
+    $('.title',html).each(function (){
+        const headline = $(this).text()
+        if(newsHeadline.length < 5){
+            newsHeadline.push(headline)
+        }
     })
-
-    var schedApp = new function(){
-        this.cleanData = function(data, result){
-            //Iterate through 2d array to access all data
-            for(let i=0; i<data.length; i++){
-                for(let j=0; j<data[i].length; j++){
-                    //If current array is date array
-                    if(i===0){
-                        //Delete period, spaces from month abbrev.
-                        data[i][j] = data[i][j].replace(/[ .]/g, "")
-
-                        //Remove zero if not followed by end of string
-                        data[i][j] = data[i][j].replace(/0(?!$)/, '')
-
-                        //Every other date is blank, but here I set blanks to the same date
-                        //as the last game. If the date is blank, it's played on same 
-                        //date as last game. check Trine schedule to see what I mean
-                        if(data[i][j].length == 1){
-                            data[i][j] = data[i][j-1]
-                        }
-                        
-                    }
-                    if(i===2){
-                        //Replace "Final" with the the result, i.e. "W, 4-1"
-                        if(data[i][j].includes("Final")){
-                            data[i][j] = result[j]
-                        } //Include score with current inning
-                        if(data[i][j].includes("Top" || "Bottom")){
-                            data[i][j] = result[j] + " " + data[i][j]
-                        }
-                    }
-                }
-            } 
+    $('.details .date', html).each(function(){
+        const date = $(this).text()
+        if(newsDate.length < 5){
+            newsDate.push(date)
         }
+    })
+    $('.title-box', html).each(function(){
+        const src = $(this).attr('href')
+        if(newsSrc.length < 5){
+            newsSrc.push("https://trinethunder.com/"+src)
+        } 
+    }) 
+    newsApp.logNews(articles)
+    res.json(articles)
+    }).catch(err => console.log(err))
+})
 
-    }
+var schedApp = new function(){
+    this.cleanData = function(data, result){
+        //Iterate through 2d array to access all data
+        for(let i=0; i<data.length; i++){
+            for(let j=0; j<data[i].length; j++){
+                //If current array is date array
+                if(i===0){
+                    //Delete period, spaces from month abbrev.
+                    data[i][j] = data[i][j].replace(/[ .]/g, "")
 
-    var newsApp = new function(){
-        var archiveArr = [];
-        this.logNews = function(articles){
-            for(let i=0; i<articles.length; i++){
-                for(let j=0; j<articles[i].length; j++){
-                    console.log(articles[i][j] + "\n")
-                    /*if(i == 0){
-                        if(articles[i][j].includes("Rosey")){
-                            archiveArr += articles[0][j] + articles[1][j] + articles[2][j]
-                        }
-                    }*/
+                    //Remove zero if not followed by end of string
+                    data[i][j] = data[i][j].replace(/0(?!$)/, '')
+
+                    //Every other date is blank, but here I set blanks to the same date
+                    //as the last game. If the date is blank, it's played on same 
+                    //date as last game. check Trine schedule to see what I mean
+                    if(data[i][j].length == 1){
+                        data[i][j] = data[i][j-1]
+                    }
+                    
+                }
+                if(i===2){
+                    //Replace "Final" with the the result, i.e. "W, 4-1"
+                    if(data[i][j].includes("Final")){
+                        data[i][j] = result[j]
+                    } //Include score with current inning
+                    if(data[i][j].includes("Top" || "Bottom")){
+                        data[i][j] = result[j] + " " + data[i][j]
+                    }
                 }
             }
-            /*
-            let content = '';
-            content = archiveArr[0] + archiveArr[1] + archiveArr[2]
-            if('/Users/jacobrosey/Desktop/Web Dev Projects/Trine Reminder/archive.txt'.includes(!content)){
-                fs.writeFile('/Users/jacobrosey/Desktop/Web Dev Projects/Trine Reminder/archive.txt', content, { flag: 'a+' }, err =>
-                {
-                    if(err){
-                        console.error(err)
-                        return
-                    }
-        
-                }) 
-            }*/
-        }
+        } 
     }
+
+}
+
+var newsApp = new function(){
+    var archiveArr = [];
+    this.logNews = function(articles){
+        for(let i=0; i<articles.length; i++){
+            for(let j=0; j<articles[i].length; j++){
+                console.log(articles[i][j] + "\n")
+                /*if(i == 0){
+                    if(articles[i][j].includes("Rosey")){
+                        archiveArr += articles[0][j] + articles[1][j] + articles[2][j]
+                    }
+                }*/
+            }
+        }
+        /*
+        let content = '';
+        content = archiveArr[0] + archiveArr[1] + archiveArr[2]
+        if('/Users/jacobrosey/Desktop/Web Dev Projects/Trine Reminder/archive.txt'.includes(!content)){
+            fs.writeFile('/Users/jacobrosey/Desktop/Web Dev Projects/Trine Reminder/archive.txt', content, { flag: 'a+' }, err =>
+            {
+                if(err){
+                    console.error(err)
+                    return
+                }
+    
+            }) 
+        }*/
+    }
+}
+    
+
 });
