@@ -123,7 +123,7 @@ axios(news)
     }) 
     newsApp.logNews(articles)
     res.json(articles)
-}).catch(err => console.log(err))
+    }).catch(err => console.log(err))
 })
 
 var schedApp = new function(){
