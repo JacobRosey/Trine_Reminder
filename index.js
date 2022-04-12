@@ -1,6 +1,6 @@
 //Run with npm start
 
-const PORT = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
 const axios = require('axios')
 const cheerio = require('cheerio')
