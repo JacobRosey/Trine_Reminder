@@ -1,5 +1,7 @@
 //Run with npm start
 
+const port = process.env.PORT || 3000
+
 const axios = require('axios')
 const cheerio = require('cheerio')
 const express = require('express')
@@ -9,7 +11,7 @@ const fs = require('fs')
 const app = express()
 app.use(cors())
 
-app.listen(process.env.PORT || 3000, function (){
+app.listen(port, function (){
     console.log("Server started successfully")
 })
 
@@ -124,7 +126,7 @@ axios(news)
 }).catch(err => console.log(err))
 })
 
-app.listen(PORT , () => console.log(`server running on PORT ${PORT}`))
+app.listen(port , () => console.log(`server running on PORT ${port}`))
 
 var schedApp = new function(){
     this.cleanData = function(data, result){
