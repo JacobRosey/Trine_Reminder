@@ -23,7 +23,7 @@ app.listen(port, () => {
 });
 app.get('/', (req, res, next) => {
 
-    res.status(200)({
+    res.status(200).json({
         status: 'success',
         data: {
             name: 'trine-scraper',
