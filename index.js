@@ -1,6 +1,6 @@
 //Run with npm start
 
-const PORT = 8000
+const PORT = process.env.PORT || 3000
 
 const axios = require('axios')
 const cheerio = require('cheerio')
@@ -10,6 +10,10 @@ const fs = require('fs')
 
 const app = express()
 app.use(cors())
+
+app.listen(port, function (){
+    console.log("Server started successfully")
+})
 
 const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
