@@ -21,6 +21,17 @@ if(port == null || port == ""){
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
+app.get('/', (req, res, next) => {
+
+    res.status(200).json({
+        status: 'success',
+        data: {
+            name: 'trine-scraper',
+            version: '0.1.0'
+        }
+    });
+
+});
 app.get('/record', (req, res) => {
     axios(schedule)
         .then(response => {
