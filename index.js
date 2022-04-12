@@ -6,7 +6,7 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const express = require('express')
 const cors = require('cors')
-const fs = require('fs')
+//const fs = require('fs')
 
 const app = express()
 app.use(cors())
