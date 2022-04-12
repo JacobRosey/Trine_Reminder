@@ -1,9 +1,9 @@
 //Run with npm start
 
 let port = process.env.PORT || 3000;
-/*if(port == null || port == ""){
+if(port == null || port == ""){
     port =  3000
-}*/
+}
 
 const axios = require('axios')
 const cheerio = require('cheerio')
