@@ -146,11 +146,10 @@ var schedApp = new function(){
                     
                 }
                 if(i===2){
-                    //Replace all new lines, spaces and tab spaces
-                    //data[i][j] = data[i][j].replace(/[ \t\n]/g, "")
+                    //Replace "Final" with the the result, i.e. "W, 4-1"
                     if(data[i][j].includes("Final")){
                         data[i][j] = result[j]
-                    } 
+                    } //Include score with current inning
                     if(data[i][j].includes("Top" || "Bottom")){
                         data[i][j] = result[j] + " " + data[i][j]
                     }

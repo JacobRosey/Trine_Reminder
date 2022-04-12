@@ -44,7 +44,7 @@ fetch('http://localhost:8000/news')
             let date =    `<p id="news-date">`+ data[1][i] +`</p>`
             let link =    `<a id="src" target="_blank" href="`+ data[2][i]+
                                `"> Click Here to Read More</a><br><br>`
-            //newsDisplay.insertAdjacentHTML("beforeend", storyItem)
+
             newsDisplay.innerHTML += headline + date + link
         }
     }).catch(err=>console.log(err))
@@ -62,7 +62,7 @@ fetch('http://localhost:8000/schedule')
                 oddeven = 'even'
             } else  oddeven = 'odd'
 
-            //Change dates back to more readable format now that comparisons are finished
+            //Change dates to more readable format
             if(data[0][i].includes("Mar")){
                 data[0][i] = data[0][i].replace('Mar', 'March ')
             }
