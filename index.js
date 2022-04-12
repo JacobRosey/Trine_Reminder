@@ -22,9 +22,9 @@ const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
 const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
 //app.METHOD(PATH, HANDLER)
-/*app.listen(port, function (){
+app.listen(port, function (){
     console.log(port)
-})*/
+})
 app.get('/record', (req, res) => {
     axios(schedule)
         .then(response => {
