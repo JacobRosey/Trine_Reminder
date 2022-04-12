@@ -1,0 +1,225 @@
+:root{
+    --primary-color: rgb(2, 35, 74);
+    --secondary-color: rgb(186, 175, 120);
+}
+@keyframes softball{
+    0%{
+        transform: scale(2) rotateZ(0deg)
+        
+    }
+    50%{
+        transform: scale(2.5) rotateZ(360deg)
+    }
+    100%{
+        transform: scale(2) rotateZ(0deg)
+    }
+}
+@keyframes breathe{
+    0%{
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(1.05)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
+body{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    font-weight: bold;
+    overflow-x: hidden;
+    
+}
+#banner{
+    text-align: center;
+    margin: 1em;
+    padding: 2em;
+    font-size: 1.25em;
+    border-radius: 1em;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+
+}
+#date{
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.flex-container{
+    display: flexbox;
+    align-items: center;
+    margin: 2em;
+    padding: 1em;
+    flex-direction:column;
+    overflow-x: visible;
+}
+#record{
+    display: grid;
+    grid-template-columns: 280px 250px 250px;
+    text-align: center;
+    color: rgb(180, 180, 180);
+}
+#adr-stats{
+    //font-weight: bold;
+    font-size: 1.25em;
+    margin-top: 3em;
+    display: flex;
+    justify-content: left;
+    margin-left: 3.75em;
+}
+#next-game{
+    color: var(--primary-color);
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    border: none;
+    height: 2em;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: 5px;
+    float: right;
+    margin-right: 4.8em;
+    cursor: pointer;
+}
+#stats{
+    display: grid;
+    grid-template-columns: repeat(8, 75px);
+    width: 75%;
+    margin: auto;
+    margin-top: 1em;
+
+    #stat-desc{
+        padding-left: 2em;
+        border-bottom: 1px solid;
+        border-bottom-width: 3px;
+        height: 50%;
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+    #stat-num{
+        padding-left: 2em;
+        margin-top: -1px;
+    }
+    
+}
+#feed{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4em;
+    margin-left: 2em;
+
+    #background-odd{
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        background-color: rgb(180, 180, 180);
+        text-align: center;
+        height: 5em;
+        width: 90%;
+        padding: .5em;
+        border-radius: 1em;
+        color: black;
+        h3{
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            margin: 1em;
+            margin-left: 4em;
+            padding-top: .5em;
+            width: 50%;
+            text-align: center;
+            border-radius: 20px;
+        }
+        p{
+            margin-top: 2em;
+            margin-left: 5em;
+        }
+    }
+    #background-even{
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        background-color: whitesmoke;
+        text-align: center;
+        height: 5em;
+        width: 90%;
+        padding: .5em;
+        border-radius: 1em;
+        color: black;
+        h3{
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            margin: 1em;
+            margin-left: 4em;
+            padding-top: .5em;
+            width: 50%;
+            text-align: center;
+            border-radius: 20px;
+        }
+        p{
+            margin-top: 2em;
+            margin-left: 5em;
+        }
+    }
+}
+
+h2{
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    //color: rgb(180,180,180);
+}
+.hidden{
+    display: none;
+}
+#news-date{
+    color: whitesmoke;
+}
+.game-today{
+    display: flex;
+    margin-right: 4em;
+    margin-left: 4em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 1.25em;
+    border-radius: 5em;
+    background-color: rgb(180, 180, 180);
+    animation-name: breathe;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+
+    
+    #emoji{
+        margin-left: 4em;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        color: var(--primary-color);
+        animation-name: softball;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+    p{
+        //font-size: 1.75em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: var(--primary-color);
+        margin-left: 2.5em;
+
+        #game-live{
+            font-size: .5em;
+        }
+        #game-link{
+            text-decoration: underline;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+    }
+
+}
+
+a{
+    color: var(--secondary-color);
+    font-style: italic;
+    color: rgb(180, 180, 180);
+}

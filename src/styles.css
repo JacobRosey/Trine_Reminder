@@ -1,0 +1,305 @@
+:root {
+  --primary-color: rgb(2, 35, 74);
+  --secondary-color: rgb(186, 175, 120);
+}
+
+@-webkit-keyframes softball {
+  0% {
+    -webkit-transform: scale(2) rotateZ(0deg);
+            transform: scale(2) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: scale(2.5) rotateZ(360deg);
+            transform: scale(2.5) rotateZ(360deg);
+  }
+  100% {
+    -webkit-transform: scale(2) rotateZ(0deg);
+            transform: scale(2) rotateZ(0deg);
+  }
+}
+
+@keyframes softball {
+  0% {
+    -webkit-transform: scale(2) rotateZ(0deg);
+            transform: scale(2) rotateZ(0deg);
+  }
+  50% {
+    -webkit-transform: scale(2.5) rotateZ(360deg);
+            transform: scale(2.5) rotateZ(360deg);
+  }
+  100% {
+    -webkit-transform: scale(2) rotateZ(0deg);
+            transform: scale(2) rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes breathe {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+body {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-weight: bold;
+  overflow-x: hidden;
+}
+
+#banner {
+  text-align: center;
+  margin: 1em;
+  padding: 2em;
+  font-size: 1.25em;
+  border-radius: 1em;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+#date {
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.flex-container {
+  display: flexbox;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em;
+  padding: 1em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-x: visible;
+}
+
+#record {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 280px 250px 250px;
+      grid-template-columns: 280px 250px 250px;
+  text-align: center;
+  color: #b4b4b4;
+}
+
+#adr-stats {
+  font-size: 1.25em;
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin-left: 3.75em;
+}
+
+#next-game {
+  color: var(--primary-color);
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  border: none;
+  height: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 5px;
+  float: right;
+  margin-right: 4.8em;
+  cursor: pointer;
+}
+
+#stats {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (75px)[8];
+      grid-template-columns: repeat(8, 75px);
+  width: 75%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+#stats #stat-desc {
+  padding-left: 2em;
+  border-bottom: 1px solid;
+  border-bottom-width: 3px;
+  height: 50%;
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
+#stats #stat-num {
+  padding-left: 2em;
+  margin-top: -1px;
+}
+
+#feed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 4em;
+  margin-left: 2em;
+}
+
+#feed #background-odd {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px;
+  background-color: #b4b4b4;
+  text-align: center;
+  height: 5em;
+  width: 90%;
+  padding: .5em;
+  border-radius: 1em;
+  color: black;
+}
+
+#feed #background-odd h3 {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin: 1em;
+  margin-left: 4em;
+  padding-top: .5em;
+  width: 50%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#feed #background-odd p {
+  margin-top: 2em;
+  margin-left: 5em;
+}
+
+#feed #background-even {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px;
+  background-color: whitesmoke;
+  text-align: center;
+  height: 5em;
+  width: 90%;
+  padding: .5em;
+  border-radius: 1em;
+  color: black;
+}
+
+#feed #background-even h3 {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  margin: 1em;
+  margin-left: 4em;
+  padding-top: .5em;
+  width: 50%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+#feed #background-even p {
+  margin-top: 2em;
+  margin-left: 5em;
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+#news-date {
+  color: whitesmoke;
+}
+
+.game-today {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 4em;
+  margin-left: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 1.25em;
+  border-radius: 5em;
+  background-color: #b4b4b4;
+  -webkit-animation-name: breathe;
+          animation-name: breathe;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.game-today #emoji {
+  margin-left: 4em;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  color: var(--primary-color);
+  -webkit-animation-name: softball;
+          animation-name: softball;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.game-today p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: var(--primary-color);
+  margin-left: 2.5em;
+}
+
+.game-today p #game-live {
+  font-size: .5em;
+}
+
+.game-today p #game-link {
+  text-decoration: underline;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+a {
+  color: var(--secondary-color);
+  font-style: italic;
+  color: #b4b4b4;
+}
+/*# sourceMappingURL=styles.css.map */

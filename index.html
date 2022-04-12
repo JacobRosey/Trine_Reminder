@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Web Scraping App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/styles.css">
+    </head>
+    <body>
+        <div id="banner">
+            TRINE SOFTBALL WEB SCRAPER
+        </div>
+        <div id="record">
+            
+        </div>
+        <span id="adr-stats">#5 Adrienne Rosey</span>
+        <div id="stats">
+
+        </div>
+        <div class="hidden" id="game-today">
+            <p id="emoji">🥎</p>
+            <p id="game-live">Game is live right now! Click 
+                <a id="game-link" href="https://livestream.com/trinebroadcastingnetwork"
+                target="_blank">here</a> to view stream</p>
+        </div>
+        <h2>Most Recent News Articles</h2>
+        <div id="news" class="flex-container">
+
+        </div>
+        <h2>Trine Schedule and Results</h2>
+        <button id="next-game" onClick="jumpToGame()">
+            Go To Next Game
+        </button>
+        <div id="feed">
+            
+        </div>
+        
+        <script src="src/app.js" async defer></script>
+    </body>
+</html>
