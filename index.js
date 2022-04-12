@@ -126,8 +126,6 @@ axios(news)
 }).catch(err => console.log(err))
 })
 
-app.listen(port , () => console.log(`server running on PORT ${port}`))
-
 var schedApp = new function(){
     this.cleanData = function(data, result){
         //Iterate through 2d array to access all data
