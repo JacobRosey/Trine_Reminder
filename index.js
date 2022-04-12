@@ -1,7 +1,5 @@
 //Run with npm start
 
-const port = process.env.PORT || 3000
-
 const axios = require('axios')
 const cheerio = require('cheerio')
 const express = require('express')
@@ -11,7 +9,7 @@ const fs = require('fs')
 const app = express()
 app.use(cors())
 
-app.listen(port, function (){
+app.listen(process.env.PORT || 3000, function (){
     console.log("Server started successfully")
 })
 
