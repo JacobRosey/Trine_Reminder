@@ -13,7 +13,7 @@ const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
 const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT;
 if(port == null || port == ""){
     port = 3000;
 }
