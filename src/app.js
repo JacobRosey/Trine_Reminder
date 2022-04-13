@@ -7,7 +7,7 @@ const recDisplay = document.querySelector('#record')
 const statDisplay = document.querySelector('#stats')
 
 //Append the current team record for conference, overall, and win or loss streak
-fetch('http://localhost:8000/record')
+fetch('https://trine-scraper.herokuapp.com/record')
     .then(response => {return response.json()})
     .then(data => {
         let overall =  `<h3 id="overall-rec">Overall Record: `+data[0]+`</h3>`
@@ -18,7 +18,7 @@ fetch('http://localhost:8000/record')
     })
 
 //Append my sister's current stats
-fetch('http://localhost:8000/stats')
+fetch('https://trine-scraper.herokuapp.com/stats')
     .then(response => {return response.json()})
     .then(data => {
         console.log(data)
@@ -34,7 +34,7 @@ fetch('http://localhost:8000/stats')
     }).catch(err=>console.log(err))
 
 //Append the 5 most recent news articles about the team
-fetch('http://localhost:8000/news')
+fetch('https://trine-scraper.herokuapp.com/news')
     .then(response => {return response.json()})
     .then(data => {
         console.log(data)
@@ -50,7 +50,7 @@ fetch('http://localhost:8000/news')
     }).catch(err=>console.log(err))
 
 //Append the schedule for the entire season
-fetch('http://localhost:8000/schedule')
+fetch('https://trine-scraper.herokuapp.com/schedule')
     .then(response => {return response.json()})
     .then(data => {
         //Uncomment to see Active Game Alert
