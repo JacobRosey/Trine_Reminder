@@ -1,3 +1,3 @@
 # Trine_Reminder
 
-This things a piece of shit
+Trying to figure out how to deploy to heroku
