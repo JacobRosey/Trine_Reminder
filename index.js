@@ -25,13 +25,22 @@ app.listen(port, () => {
 
 app.get('/', (req, res, next) => {
 
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'trine-scraper',
-            version: '0.1.0'
-        }
-    });
+    res.send(
+        app.get('/record', (req, res) => {
+            axios(schedule)
+                .then(response => {
+                    const html = response.data
+                    const $ = cheerio.load(html)
+                    const recordArr = []
+        
+                    $('.clearfix .cat .value', html).each(function(){
+                        var records = $(this).text()
+                        recordArr.push(records)
+                    })
+                    res.json(recordArr)
+                }).catch(err => console.log(err))
+        })
+    )
 
 
 app.get('/record', (req, res) => {
