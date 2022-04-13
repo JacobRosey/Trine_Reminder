@@ -17,34 +17,31 @@ let port = process.env.PORT || 3000;
 if(port == null || port == ""){
     port = 3000;
 }
+
 //app.METHOD(PATH, HANDLER)
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
+
 app.get('/', (req, res, next) => {
 
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'trine-scraper',
-            version: '0.1.0'
-        }
-    });
     
-app.get('/record', (req, res) => {
-    axios(schedule)
-        .then(response => {
-            const html = response.data
-            const $ = cheerio.load(html)
-            const recordArr = []
+    res.send(
+        app.get('/record', (req, res) => {
+        axios(schedule)
+            .then(response => {
+                const html = response.data
+                const $ = cheerio.load(html)
+                const recordArr = []
 
-            $('.clearfix .cat .value', html).each(function(){
-                var records = $(this).text()
-                recordArr.push(records)
-            })
-            res.json(recordArr)
-        }).catch(err => console.log(err))
-})
+                $('.clearfix .cat .value', html).each(function(){
+                    var records = $(this).text()
+                    recordArr.push(records)
+                })
+                res.json(recordArr)
+            }).catch(err => console.log(err))
+        
+        }));
 
 app.get('/stats', (req, res) => {
     axios(stats)
@@ -66,7 +63,6 @@ app.get('/stats', (req, res) => {
         res.json(statArr)
     }).catch(err => console.log(err))
 })
-
 
 app.get('/schedule', (req, res) => {
 
