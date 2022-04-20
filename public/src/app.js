@@ -120,11 +120,11 @@ function jumpToGame(){
             //Cannot read properties of null - reading 'style'
             let divBackground = anim[i].style.backgroundColor; 
             const foundGame = [
-                       {backgroundColor: backgroundColor},
+                       {backgroundColor: divBackground},
                        {transform: 'scale(1.05)'},
                        {backgroundColor: 'rgb(206, 194, 135)'},
                        {transform: 'scale(1)'},
-                       {backgroundColor: backgroundColor}];
+                       {backgroundColor: divBackground}];
             //Add animation to div
             setTimeout(() => {anim[i].animate(foundGame, animDuration)}, 500)
             return;  
