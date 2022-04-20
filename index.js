@@ -27,10 +27,10 @@ app.listen(port, () => {
 });
 
 app.use(express.static(path.join(__dirname, './src')));
-/*
+
 router.get("/", function(req, res) {
     res.sendFile(path.resolve('./index.html'))
-})*/
+})
 app.get('/', function(req, res) {
     res.sendFile('index.html');
  });
