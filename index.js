@@ -30,9 +30,7 @@ app.listen(port, () => {
 router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
  });
- router.get('/index.html', function(req, res) {
-    res.sendFile(path.join(__dirname + '/src/'))
- })
+ 
  app.use("/", router)
 
 app.get('/record', (req, res) => {
