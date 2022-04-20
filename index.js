@@ -20,16 +20,20 @@ if(port == null || port == ""){
     port = 3000;
 }
 
-app.use("/", router)
+//app.use("/", router)
 //app.METHOD(PATH, HANDLER)
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
 
+app.use(express.static(path.join(__dirname, 'src')));
+/*
 router.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/index.html"))
-})
-
+    res.sendFile(path.resolve('./index.html'))
+})*/
+app.get('/', function(req, res) {
+    res.sendFile('index.html');
+ });
 
 app.get('/record', (req, res) => {
     axios(schedule)
