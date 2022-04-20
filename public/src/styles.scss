@@ -932,6 +932,18 @@ a{
         grid-template-columns: repeat(8, 80px);
         margin-left: 4em;
     }
+    #news{
+        text-align: center;
+        #headline{
+            font-size: 2em;
+        }
+        #news-date{
+            font-size: 1em;
+        }
+        #src{
+            font-size: 1em;
+        }
+    }
     .game-today{
         display: flex;
         margin-right: 2em;
@@ -1015,6 +1027,18 @@ a{
         grid-template-columns: repeat(8, 110px);
         margin-left: 1em;
     }
+    #news{
+        text-align: center;
+        #headline{
+            font-size: 2em;
+        }
+        #news-date{
+            font-size: 1em;
+        }
+        #src{
+            font-size: 1em;
+        }
+    }
     .game-today{
         display: flex;
         margin-right: 4em;
@@ -1079,6 +1103,18 @@ a{
     #stats{
         grid-template-columns: repeat(8, 120px);
         margin-left: 2em;
+    }
+    #news{
+        text-align: center;
+        #headline{
+            font-size: 2em;
+        }
+        #news-date{
+            font-size: 1em;
+        }
+        #src{
+            font-size: 1em;
+        }
     }
     .game-today{
         display: flex;
@@ -1150,7 +1186,7 @@ a{
         font-size: 1.5em;
     }
     h2{
-        font-size: 2.5em;
+        font-size: 2em;
     }
     #stats{
         grid-template-columns: repeat(8, 150px);
@@ -1209,10 +1245,10 @@ a{
             font-size: 2em;
         }
         #news-date{
-            font-size: 1.5em;
+            font-size: 1em;
         }
         #src{
-            font-size: 1.5em;
+            font-size: 1em;
         }
     }
     #feed{
@@ -1268,7 +1304,7 @@ a{
         margin-top: 3em;
     }
     h2{
-        font-size: 2.5em;
+        font-size: 2em;
     }
     #stats{
         grid-template-columns: repeat(8, 165px);
@@ -1342,10 +1378,10 @@ a{
             font-size: 2em;
         }
         #news-date{
-            font-size: 1.25em;
+            font-size: 1em;
         }
         #src{
-            font-size: 1.25em;
+            font-size: 1em;
         }
     }
     #next-game{

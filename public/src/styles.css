@@ -1068,6 +1068,18 @@ a {
         grid-template-columns: repeat(8, 80px);
     margin-left: 4em;
   }
+  #news {
+    text-align: center;
+  }
+  #news #headline {
+    font-size: 2em;
+  }
+  #news #news-date {
+    font-size: 1em;
+  }
+  #news #src {
+    font-size: 1em;
+  }
   .game-today {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1159,6 +1171,18 @@ a {
         grid-template-columns: repeat(8, 110px);
     margin-left: 1em;
   }
+  #news {
+    text-align: center;
+  }
+  #news #headline {
+    font-size: 2em;
+  }
+  #news #news-date {
+    font-size: 1em;
+  }
+  #news #src {
+    font-size: 1em;
+  }
   .game-today {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1230,6 +1254,18 @@ a {
     -ms-grid-columns: (120px)[8];
         grid-template-columns: repeat(8, 120px);
     margin-left: 2em;
+  }
+  #news {
+    text-align: center;
+  }
+  #news #headline {
+    font-size: 2em;
+  }
+  #news #news-date {
+    font-size: 1em;
+  }
+  #news #src {
+    font-size: 1em;
   }
   .game-today {
     display: -webkit-box;
@@ -1309,7 +1345,7 @@ a {
     font-size: 1.5em;
   }
   h2 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   #stats {
     -ms-grid-columns: (150px)[8];
@@ -1377,10 +1413,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1.5em;
+    font-size: 1em;
   }
   #news #src {
-    font-size: 1.5em;
+    font-size: 1em;
   }
   #feed {
     margin-left: 3em;
@@ -1436,7 +1472,7 @@ a {
     margin-top: 3em;
   }
   h2 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   #stats {
     -ms-grid-columns: (165px)[8];
@@ -1522,10 +1558,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1.25em;
+    font-size: 1em;
   }
   #news #src {
-    font-size: 1.25em;
+    font-size: 1em;
   }
   #next-game {
     margin-right: 8em;
