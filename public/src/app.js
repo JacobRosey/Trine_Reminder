@@ -117,13 +117,14 @@ function jumpToGame(){
             if(window.innerWidth >= 400){
                 window.scrollBy(0, -55)
             } else {window.scrollBy(0, -110)}
-            var divBackground = anim[i].style.backgroundColor; 
+            //Cannot read properties of null - reading 'style'
+            //let divBackground = anim[i].style.backgroundColor; 
             const foundGame = [
-                       {backgroundColor: divBackground},
+                       {backgroundColor: 'white'},
                        {transform: 'scale(1.05)'},
                        {backgroundColor: 'rgb(206, 194, 135)'},
                        {transform: 'scale(1)'},
-                       {backgroundColor: divBackground}];
+                       {backgroundColor: 'red'}];
             //Add animation to div
             setTimeout(() => {anim[i].animate(foundGame, animDuration)}, 500)
             return;  
