@@ -5,6 +5,7 @@ const cheerio = require('cheerio')
 const express = require('express')
 const cors = require('cors')
 //const fs = require('fs')
+const router = express.Router()
 
 const app = express()
 app.use(cors())
@@ -18,10 +19,15 @@ if(port == null || port == ""){
     port = 3000;
 }
 
+app.use("/", router)
 //app.METHOD(PATH, HANDLER)
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
+
+router.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/client/index.html"))
+})
 
 app.get('/', (req, res, next) => {
 
