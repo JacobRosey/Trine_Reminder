@@ -73,7 +73,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
                 data[0][i] = data[0][i].slice(0, 3)+ " " + data[0][i].slice(3,5)
             }
 
-            let date = `<div id ="background-`+oddeven+`"><h3>`+ data[0][i] +`</h3>`
+            let date = `<div class="animate-div"id="background-`+oddeven+`"><h3>`+ data[0][i] +`</h3>`
             let opponent = `<p>`+ data[1][i] +`</p>`
             let status = `<p id="status">`+ data[2][i] +`</p></div><br>`
             
@@ -118,13 +118,13 @@ function jumpToGame(){
                 window.scrollBy(0, -55)
             } else {window.scrollBy(0, -110)}
             //Cannot read properties of null - reading 'style'
-            //let divBackground = anim[i].style.backgroundColor; 
+            let divBackground = anim[i].style.backgroundColor; 
             const foundGame = [
-                       {backgroundColor: 'white'},
+                       {backgroundColor: backgroundColor},
                        {transform: 'scale(1.05)'},
                        {backgroundColor: 'rgb(206, 194, 135)'},
                        {transform: 'scale(1)'},
-                       {backgroundColor: 'red'}];
+                       {backgroundColor: backgroundColor}];
             //Add animation to div
             setTimeout(() => {anim[i].animate(foundGame, animDuration)}, 500)
             return;  
