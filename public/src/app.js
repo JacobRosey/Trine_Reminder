@@ -40,10 +40,10 @@ fetch('https://trine-scraper.herokuapp.com/news')
         console.log(data)
         
         for(let i=0; i<data[0].length; i++){
-            let headline = `<h3 id="headline">`+ data[0][i] +`</h3>`
+            let headline = `<div class ="news-div"<h3 id="headline">`+ data[0][i] +`</h3>`
             let date =    `<p id="news-date">`+ data[1][i] +`</p>`
             let link =    `<a id="src" target="_blank" href="`+ data[2][i]+
-                               `"> Click Here to Read More</a><br><br>`
+                               `"> Click Here to Read More</a><br><br></div>`
 
             newsDisplay.innerHTML += headline + date + link
         }
