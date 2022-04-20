@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
  });
 router.get('/src/', function(req, res) {
-    res.sendFile(path.join(__dirname, "styles.css"));
+    res.sendFile(path.join(__dirname, "/styles.css"));
 });
  
  app.use("/", router)
