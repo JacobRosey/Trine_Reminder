@@ -33,7 +33,7 @@ router.get("/", function(req, res) {
 })
 */
 router.get('/', function(req, res) {
-    res.sendFile('/index.html');
+    res.sendFile('./index.html');
  });
 
 app.get('/record', (req, res) => {
