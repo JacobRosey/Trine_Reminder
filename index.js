@@ -30,16 +30,6 @@ router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/index.html"))
 })
 
-app.get('/', (req, res, next) => {
-
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'trine-scraper',
-            version: '0.1.0'
-        }
-    });
-
 
 app.get('/record', (req, res) => {
     axios(schedule)
@@ -212,5 +202,3 @@ var newsApp = new function(){
     }
 }
     
-
-});
