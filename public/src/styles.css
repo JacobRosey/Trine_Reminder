@@ -1075,10 +1075,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1em;
+    font-size: .75em;
   }
   #news #src {
-    font-size: 1em;
+    font-size: .75em;
   }
   .game-today {
     display: -webkit-box;
@@ -1178,10 +1178,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1em;
+    font-size: .75em;
   }
   #news #src {
-    font-size: 1em;
+    font-size: .75em;
   }
   .game-today {
     display: -webkit-box;
@@ -1262,10 +1262,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1em;
+    font-size: .75em;
   }
   #news #src {
-    font-size: 1em;
+    font-size: .75em;
   }
   .game-today {
     display: -webkit-box;
@@ -1413,10 +1413,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1em;
+    font-size: .75em;
   }
   #news #src {
-    font-size: 1em;
+    font-size: .75em;
   }
   #feed {
     margin-left: 3em;
@@ -1558,10 +1558,10 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: 1em;
+    font-size: .75em;
   }
   #news #src {
-    font-size: 1em;
+    font-size: .75em;
   }
   #next-game {
     margin-right: 8em;
