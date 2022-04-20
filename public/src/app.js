@@ -117,7 +117,7 @@ function jumpToGame(){
             if(window.innerWidth >= 400){
                 window.scrollBy(0, -55)
             } else {window.scrollBy(0, -110)}
-            let divBackground = anim[i].style.backgroundColor; 
+            var divBackground = anim[i].style.backgroundColor; 
             const foundGame = [
                        {backgroundColor: divBackground},
                        {transform: 'scale(1.05)'},
