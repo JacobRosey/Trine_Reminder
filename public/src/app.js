@@ -97,7 +97,15 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
 function jumpToGame(){
     
     const status = document.querySelectorAll('#status');
+    const anim = document.querySelectorAll('.animate-div')
     let statusArr = []
+
+    const animDuration = {
+        duration: 1500,
+        iterations: 3,
+        fill: 'backwards',
+        easing: 'ease-in-out'
+      }
     //Ideally you would find the next date (starting from today) which exists
     //in the DOM in the schedule section. However, this approach does the job
     //with much less code
