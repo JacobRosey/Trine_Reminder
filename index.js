@@ -27,8 +27,7 @@ app.listen(port, () => {
 });
 
 router.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/index.html"));
-    res.sendFile(path.join(__dirname + "/src/styles.css"));
+    res.sendFile(path.join(__dirname + "/index.html"))
 })
 
 
