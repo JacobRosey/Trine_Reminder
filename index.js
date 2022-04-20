@@ -25,16 +25,13 @@ app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
 
-//app.use(express.static(path.join(__dirname, './src')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
  });
-router.get('/src/', function(req, res) {
-    res.sendFile(path.join(__dirname, "/styles.css"));
-});
  
- app.use("/", router)
+app.use('/', router)
 
 app.get('/record', (req, res) => {
     axios(schedule)
