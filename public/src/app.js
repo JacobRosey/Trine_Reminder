@@ -106,8 +106,19 @@ function jumpToGame(){
         statusArr.push(status[i].innerHTML) 
         if(status[i].innerHTML.includes("PM" || "AM")){
             status[i].scrollIntoView(true)
-            window.scrollBy(0, -55)
-            return;   
+            if(window.innerWidth >= 400){
+                window.scrollBy(0, -55)
+            } else {window.scrollBy(0, -110)}
+            let divBackground = anim[i].style.backgroundColor; 
+            const foundGame = [
+                       {backgroundColor: divBackground},
+                       {transform: 'scale(1.05)'},
+                       {backgroundColor: 'rgb(206, 194, 135)'},
+                       {transform: 'scale(1)'},
+                       {backgroundColor: divBackground}];
+            //Add animation to div
+            setTimeout(() => {anim[i].animate(foundGame, animDuration)}, 500)
+            return;  
         } 
     } alert('Season is Over! See you next year')
 }
