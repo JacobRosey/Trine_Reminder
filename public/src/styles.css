@@ -759,8 +759,8 @@ a {
     margin: .25em;
   }
   #record {
-    -ms-grid-columns: (150px)[3];
-        grid-template-columns: repeat(3, 150px);
+    -ms-grid-columns: (140px)[3];
+        grid-template-columns: repeat(3, 140px);
     font-size: .75em;
     margin-left: 1em;
   }
