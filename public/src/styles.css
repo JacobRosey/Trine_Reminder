@@ -1200,7 +1200,6 @@ a {
   #record {
     -ms-grid-columns: (300px)[3];
         grid-template-columns: repeat(3, 300px);
-    color: red;
   }
   #stats {
     -ms-grid-columns: (110px)[8];
