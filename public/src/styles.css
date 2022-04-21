@@ -250,6 +250,7 @@ body {
 #feed #background-odd p {
   margin-top: 2em;
   margin-left: 5em;
+  width: 100%;
 }
 
 #feed #background-even {
@@ -280,6 +281,7 @@ body {
 #feed #background-even p {
   margin-top: 2em;
   margin-left: 5em;
+  width: 100%;
 }
 
 h2 {
