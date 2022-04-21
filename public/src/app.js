@@ -74,7 +74,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
             }
 
             let date = `<div class="animate-div"id="background-`+oddeven+`"><h3>`+ data[0][i] +`</h3>`
-            let opponent = `<p>`+ data[1][i] +`</p>`
+            let opponent = `<p id="sched-opp">`+ data[1][i] +`</p>`
             let status = `<p id="status">`+ data[2][i] +`</p></div><br>`
             
             if(data[2][i].includes("Top" || "Bottom")){
