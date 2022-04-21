@@ -63,6 +63,10 @@
   }
 }
 
+.animate-div {
+  margin-bottom: 1em;
+}
+
 body {
   color: var(--secondary-color);
   background-color: var(--primary-color);
