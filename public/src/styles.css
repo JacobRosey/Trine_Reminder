@@ -249,7 +249,8 @@ body {
 
 #feed #background-odd #sched-opp {
   width: 130%;
-  margin-left: 4em;
+  margin-left: 2em;
+  margin-top: 2em;
 }
 
 #feed #background-odd #status {
@@ -284,7 +285,7 @@ body {
 
 #feed #background-even #sched-opp {
   width: 130%;
-  margin-left: 4em;
+  margin-left: 2em;
   margin-top: 2em;
 }
 
