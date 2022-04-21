@@ -996,6 +996,7 @@ a {
   #record {
     -ms-grid-columns: (210px)[3];
         grid-template-columns: repeat(3, 210px);
+    color: red;
   }
   #player-stats {
     margin-left: 2em;
