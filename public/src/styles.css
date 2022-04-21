@@ -249,8 +249,8 @@ body {
 
 #feed #background-odd p {
   margin-top: 2em;
-  margin-left: -4em;
-  width: 100%;
+  margin-left: 1em;
+  width: 80%;
 }
 
 #feed #background-even {
@@ -280,8 +280,8 @@ body {
 
 #feed #background-even p {
   margin-top: 2em;
-  margin-left: -4em;
-  width: 100%;
+  margin-left: 1em;
+  width: 80%;
 }
 
 h2 {
