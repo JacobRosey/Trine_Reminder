@@ -247,10 +247,13 @@ body {
   border-radius: 20px;
 }
 
-#feed #background-odd p {
-  margin-top: 2em;
-  margin-left: 0;
-  width: 90%;
+#feed #background-odd #sched-opp {
+  width: 120%;
+  margin-left: 2em;
+}
+
+#feed #background-odd #status {
+  margin-left: 4em;
 }
 
 #feed #background-even {
@@ -278,10 +281,13 @@ body {
   border-radius: 20px;
 }
 
-#feed #background-even p {
-  margin-top: 2em;
-  margin-left: 0;
-  width: 90%;
+#feed #background-even #sched-opp {
+  width: 120%;
+  margin-left: 2em;
+}
+
+#feed #background-even #status {
+  margin-left: 4em;
 }
 
 h2 {
