@@ -253,7 +253,8 @@ body {
 }
 
 #feed #background-odd #status {
-  margin-left: 8em;
+  margin-top: 2em;
+  margin-left: 4em;
 }
 
 #feed #background-even {
@@ -288,7 +289,7 @@ body {
 }
 
 #feed #background-even #status {
-  margin-left: 6em;
+  margin-left: 4em;
   margin-top: 2em;
 }
 
