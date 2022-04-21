@@ -996,7 +996,6 @@ a {
   #record {
     -ms-grid-columns: (210px)[3];
         grid-template-columns: repeat(3, 210px);
-    color: red;
   }
   #player-stats {
     margin-left: 2em;
@@ -1201,6 +1200,7 @@ a {
   #record {
     -ms-grid-columns: (300px)[3];
         grid-template-columns: repeat(3, 300px);
+    color: red;
   }
   #stats {
     -ms-grid-columns: (110px)[8];
@@ -1275,9 +1275,21 @@ a {
     -ms-grid-columns: (250px)[3];
         grid-template-columns: repeat(3, 250px);
   }
+  #feed #background-odd #sched-opp {
+    margin-left: 2em;
+  }
+  #feed #background-odd #status {
+    margin-left: 4em;
+  }
   #feed #background-even {
     -ms-grid-columns: (250px)[3];
         grid-template-columns: repeat(3, 250px);
+  }
+  #feed #background-even #sched-opp {
+    margin-left: 2em;
+  }
+  #feed #background-even #status {
+    margin-left: 4em;
   }
 }
 
