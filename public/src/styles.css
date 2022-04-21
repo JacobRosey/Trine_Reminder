@@ -249,11 +249,11 @@ body {
 
 #feed #background-odd #sched-opp {
   width: 120%;
-  margin-left: 2em;
+  margin-left: 4em;
 }
 
 #feed #background-odd #status {
-  margin-left: 4em;
+  margin-left: 6em;
 }
 
 #feed #background-even {
@@ -283,11 +283,11 @@ body {
 
 #feed #background-even #sched-opp {
   width: 120%;
-  margin-left: 2em;
+  margin-left: 4em;
 }
 
 #feed #background-even #status {
-  margin-left: 4em;
+  margin-left: 6em;
 }
 
 h2 {
