@@ -753,6 +753,25 @@ a {
   }
 }
 
+@media only screen and (min-width: 401px) and (max-width: 499px) {
+  #banner {
+    width: 95%;
+    margin: .25em;
+  }
+  #record {
+    -ms-grid-columns: (150px)[3];
+        grid-template-columns: repeat(3, 150px);
+    font-size: .75em;
+    margin-left: 1em;
+  }
+  #feed #background-odd {
+    width: 450px;
+  }
+  #feed #background-even {
+    width: 450px;
+  }
+}
+
 @media only screen and (min-width: 501px) and (max-width: 550px) {
   #record {
     color: #b4b4b4;
