@@ -5,6 +5,9 @@
     "background_color": "rgb(2, 35, 74)",
     "theme_color": "rgb(186, 175, 120)",
     "display": "standalone",
+    "background": {
+        "service-worker": "sw.js"
+    },
     "icons": [
         {
             "src": "trine192.png",
