@@ -19,16 +19,6 @@ let port = process.env.PORT || 3000;
 if(port == null || port == ""){
     port = 3000;
 }
-//PWA service worker
-if("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").then(registration => {
-        console.log('service worker registered')
-        console.log(registration)
-    }).catch(error => {
-        console.log("service worker registration failed")
-        console.log(error)
-    })
-} 
 
 //app.METHOD(PATH, HANDLER)
 app.listen(port, () => {

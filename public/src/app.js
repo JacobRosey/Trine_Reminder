@@ -6,6 +6,17 @@ const newsDisplay = document.querySelector('#news')
 const recDisplay = document.querySelector('#record')
 const statDisplay = document.querySelector('#stats')
 
+//PWA service worker
+if("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(registration => {
+        console.log('service worker registered')
+        console.log(registration)
+    }).catch(error => {
+        console.log("service worker registration failed")
+        console.log(error)
+    })
+} 
+
 //Append the current team record for conference, overall, and win or loss streak
 fetch('https://trine-scraper.herokuapp.com/record')
     .then(response => {return response.json()})
