@@ -8,7 +8,7 @@ const statDisplay = document.querySelector('#stats')
 
 //PWA service worker
 if("serviceWorker" in navigator) {
-    navigator.serviceWorker.register('/.sw.js').then(registration => {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
         console.log('service worker registered')
         console.log(registration.scope)
     }).catch(error => {
