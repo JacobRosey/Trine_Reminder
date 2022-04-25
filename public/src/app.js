@@ -10,7 +10,7 @@ const statDisplay = document.querySelector('#stats')
 if("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/src/sw.js").then(registration => {
         console.log('service worker registered')
-        console.log(registration)
+        console.log(registration.scope)
     }).catch(error => {
         console.log("service worker registration failed")
         console.log(error)
