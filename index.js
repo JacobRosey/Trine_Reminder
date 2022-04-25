@@ -32,7 +32,6 @@ router.get('/', function(req, res) {
  });
  
 app.use('/', router)
-app.use('public/src/sw.js')
 
 app.get('/record', (req, res) => {
     axios(schedule)
