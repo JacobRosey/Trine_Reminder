@@ -21,9 +21,9 @@ if("serviceWorker" in navigator) {
 fetch('https://trine-scraper.herokuapp.com/record')
     .then(response => {return response.json()})
     .then(data => {
-        let overall =  `<h3 id="overall-rec">Overall Record: `+data[0]+`</h3>`
-        let conf = `<h3 id="conf-rec">Conference Record: `+data[2]+`</h3>`
-        let streak = `<h3 id="streak">Current Streak: `+data[4]+`</h3>`
+        let overall =  `<h3 id="overall-rec">Overall Record: <span>`+data[0]+`</span></h3>`
+        let conf = `<h3 id="conf-rec">Conference Record: <span>`+data[2]+`</span></h3>`
+        let streak = `<h3 id="streak">Current Streak: <span>`+data[4]+`</span></h3>`
 
         recDisplay.innerHTML = overall + conf + streak
     })
