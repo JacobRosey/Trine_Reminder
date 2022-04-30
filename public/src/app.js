@@ -107,7 +107,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
 
 function jumpToGame(){
     
-    const status = document.querySelectorAll('.status');
+    const status = document.querySelectorAll('#status');
     const anim = document.querySelectorAll('.animate-div')
     let statusArr = []
 
