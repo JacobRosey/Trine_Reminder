@@ -83,7 +83,8 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
             if(data[0][i].includes("May")){
                 data[0][i] = data[0][i].slice(0, 3)+ " " + data[0][i].slice(3,5)
             }
-
+            //Not sure why I used id instead of classes....
+            //Fix that when everything else is finished
             let date = `<div class="animate-div"id="background-`+oddeven+`"><h3>`+ data[0][i] +`</h3>`
             let opponent = `<p id="sched-opp">`+ data[1][i] +`</p>`
             let status = `<p id="status">`+ data[2][i] +`</p></div><br>`
