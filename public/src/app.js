@@ -123,7 +123,7 @@ function jumpToGame(){
 
     for(let i=0; i<status.length; i++){
         statusArr.push(status[i].innerHTML) 
-        if(status[i].innerHTML.includes("PM" || "AM")){
+        if(status[i].innerHTML.includes("PM" || "AM" || "of" || "-")){
             status[i].scrollIntoView(true)
             if(window.innerWidth >= 400){
                 window.scrollBy(0, -55)
