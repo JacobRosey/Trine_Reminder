@@ -86,7 +86,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
 
             let date = `<div class="animate-div"id="background-`+oddeven+`"><h3>`+ data[0][i] +`</h3>`
             let opponent = `<p id="sched-opp">`+ data[1][i] +`</p>`
-            let status = `<p id="status">`+ data[2][i] +`</p></div><br>`
+            let status = `<p class="status">`+ data[2][i] +`</p></div><br>`
             
             if(data[2][i].includes("Top" || "Bottom")){
                 const liveGame = document.getElementById('game-today')
@@ -107,7 +107,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
 
 function jumpToGame(){
     
-    const status = document.querySelectorAll('#status');
+    const status = document.querySelectorAll('.status');
     const anim = document.querySelectorAll('.animate-div')
     let statusArr = []
 
