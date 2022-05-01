@@ -144,5 +144,5 @@ function jumpToGame(){
             setTimeout(() => {anim[i].animate(foundGame, animDuration)}, 500)
             return;  
         } 
-    } alert('Season is Over! See you next year')
+    } alert('Season is over. See you next year!')
 }
