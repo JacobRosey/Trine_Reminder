@@ -6,6 +6,12 @@ const newsDisplay = document.querySelector('#news')
 const recDisplay = document.querySelector('#record')
 const statDisplay = document.querySelector('#stats')
 
+
+window.addEventListener('DOMContentLoaded', () =>{
+    const waiting = document.getElementById('player-stats')
+    waiting.innerHTML += `<p id="waiting" style="margin:1em;color:rgb(180,180,180);">Please wait while players are loading...</p>`
+})
+
 //PWA service worker
 if("serviceWorker" in navigator) {
     navigator.serviceWorker.register('/sw.js').then(registration => {
@@ -28,7 +34,61 @@ fetch('https://trine-scraper.herokuapp.com/record')
         recDisplay.innerHTML = overall + conf + streak
     })
 
+fetch('https://trine-scraper.herokuapp.com/players')
+.then(response => response.json())
+.then(data => {
+    let names =[];
+    let statDesc = [];
+    let statNum = [];
+
+    for(let i=0; i<data.length; i++){
+        if(data[i].length == 1){
+            names.push(data[i])
+        //Pitchers have appearances, position players have games played
+        }if(data[i].includes("gp") || data[i].includes("app")){
+            statDesc.push(data[i])
+        }if(names.indexOf(data[i]) == -1 && statDesc.indexOf(data[i])== -1){
+            statNum.push(data[i])
+        }
+            if(data[i].length == 6){
+            //Need to add blank spaces to position players stats
+            //Because they have 2 less stats than pitchers. This
+            //Saves me from refactoring css
+            data[i].push('', '')
+        }
+    }
+    console.log(names, statDesc, statNum)
+    
+    document.getElementById('waiting').remove()
+    var select = document.getElementById('change-player')
+    for(let i=0; i<names.length; i++){
+        var name = names[i]
+        var el = document.createElement('option')
+        el.textContent = name
+        el.value = name
+        select.appendChild(el)
+    }
+    document.querySelector('#change-player').addEventListener('change', function() {
+        statDisplay.innerHTML = ''
+        for(let i=0; i<names.length; i++){
+            if(this.value == names[i]){
+                for(let j=0; j<statDesc[i].length; j++){
+                    var statD = `<p id="stat-desc">`+statDesc[i][j]+`</p>`
+                    statDisplay.innerHTML += statD
+                }
+                for(let j=0; j<statNum[i].length; j++){
+                    var statN =  `<p id="stat-num">`+statNum[i][j]+`</p>`
+                    statDisplay.innerHTML += statN
+                }
+
+            }
+        }
+    })
+
+             
+}).catch(err=>console.log(err))
 //Append my sister's current stats
+/*
 fetch('https://trine-scraper.herokuapp.com/stats')
     .then(response => {return response.json()})
     .then(data => {
@@ -43,7 +103,7 @@ fetch('https://trine-scraper.herokuapp.com/stats')
         }
              
     }).catch(err=>console.log(err))
-
+*/
 //Append the 5 most recent news articles about the team
 fetch('https://trine-scraper.herokuapp.com/news')
     .then(response => {return response.json()})
@@ -89,7 +149,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
             let opponent = `<p id="sched-opp">`+ data[1][i] +`</p>`
             let status = `<p id="status">`+ data[2][i] +`</p></div><br>`
             
-            if(data[2][i].includes("Top" || "Bottom")){
+            if(data[2][i].includes("Top") || data[2][i].includes("Bottom")){
                 const liveGame = document.getElementById('game-today')
                 liveGame.classList.remove('hidden')
                 liveGame.classList.add('game-today')

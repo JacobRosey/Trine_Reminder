@@ -13,7 +13,10 @@ app.use(cors())
 
 const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
-const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
+//const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
+const players = 'https://www.trinethunder.com/sports/sball/2021-22/teams/trine?view=roster'
+const playerStats = 'https://www.trinethunder.com'
+const playerLink = []
 
 let port = process.env.PORT || 3000;
 if(port == null || port == ""){
@@ -48,6 +51,77 @@ app.get('/record', (req, res) => {
         }).catch(err => console.log(err))
 })
 
+app.get('/players', (req, res) => {
+    function getPlayers() {
+      return new Promise((resolve, reject) => {
+        axios(players)
+          .then((response) => {
+            //const playerLink = []
+            const html = response.data;
+            const $ = cheerio.load(html);
+            
+            $("td.text.pinned-col > a", html).each(function () {
+              var link = $(this).attr("href");
+              //if link not yet in array, push to array
+              if (playerLink.indexOf(playerStats + link) === -1) {
+                playerLink.push(playerStats + link);
+              }
+            });
+            resolve()
+            //resolve(playerLink);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    }
+    function getPlayerStats(/*playerLink*/) {
+      setTimeout(async () => {
+        const statsArray = []
+        for (let i = 0; i < playerLink.length; i++) {
+          await new Promise((resolve, reject) => {
+            axios
+              .get(playerLink[i])
+              .then((response) => {
+                const playerLink = []
+                const html = response.data;
+                const $ = cheerio.load(html);
+                const statName = [];
+                const statDesc = [];
+                const statNum = [];
+  
+                $("h2 > span:nth-child(1)", html).each(function () {
+                  var name = $(this).text();
+                  statName.push(name);
+                });
+                $(".stat-title", html).each(function () {
+                  var stat1 = $(this).text();
+                  statDesc.push(stat1);
+                });
+                $(".stat-value", html).each(function () {
+                  var stat2 = $(this).text();
+                  statNum.push(stat2);
+                });
+                //Conditional is here because sometimes statsArray
+                //gets filled multiple times
+                if (statsArray.length < 63) {
+                  statsArray.push(statName, statDesc, statNum);
+                }
+                resolve();
+              })
+              .catch((err) => console.log(err));
+          });
+        }
+        res.json(statsArray)
+        //res.send(JSON.stringify(statsArray));
+      }, 150);
+    }
+    
+    getPlayers()
+      .then(getPlayerStats)
+      .catch((err) => console.log(err));
+  });
+/*
 app.get('/stats', (req, res) => {
     axios(stats)
     .then(response => {
@@ -68,6 +142,7 @@ app.get('/stats', (req, res) => {
         res.json(statArr)
     }).catch(err => console.log(err))
 })
+*/
 
 app.get('/schedule', (req, res) => {
 
