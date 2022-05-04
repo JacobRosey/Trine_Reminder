@@ -5,6 +5,11 @@ self.addEventListener('install', e => {
             return cache.addAll(["/", "/src/trine192.png"])
         })
     )
+    e.respondWith(
+        caches.match(e.request).then((cacheRes) => {
+            return cacheRes || fetch(e.request)
+        })
+    );
 })
 
 
