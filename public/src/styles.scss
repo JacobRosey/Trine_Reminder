@@ -70,6 +70,16 @@ body{
     justify-content: left;
     margin-left: 3em;
 }
+#change-player{
+    display: inline-block;
+    border: none;
+    background: none;
+    margin: .25em;
+    margin-left: 2em;
+    font-weight: bold;
+    transform: scale(1.25);
+    color: var(--secondary-color);
+}
 #stats{
     display: grid;
     grid-template-columns: repeat(8, 75px);
