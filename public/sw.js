@@ -1,4 +1,4 @@
-let myCache = `myCache`
+//let myCache = `myCache`
 
 self.addEventListener('install', e => {
     console.log("Install!")
@@ -9,7 +9,7 @@ self.addEventListener('install', e => {
     )
 })
 
-self.addEventListener("fetch", (e) => {
+self.addEventListener("fetch", e => {
     console.log(`intercepting fetch request for: ${e.request.url}`);
 
     /*e.respondWith(
