@@ -6,12 +6,12 @@ const newsDisplay = document.querySelector('#news')
 const recDisplay = document.querySelector('#record')
 const statDisplay = document.querySelector('#stats')
 
-/*
+
 window.addEventListener('DOMContentLoaded', () =>{
     const waiting = document.getElementById('player-stats')
     waiting.innerHTML += `<p id="waiting" style="margin:1em;color:rgb(180,180,180);">Please wait while players are loading...</p>`
 })
-*/
+
 //PWA service worker
 if("serviceWorker" in navigator) {
     navigator.serviceWorker.register('/sw.js').then(registration => {
