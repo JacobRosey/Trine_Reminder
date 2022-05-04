@@ -83,7 +83,6 @@ app.get('/players', (req, res) => {
             axios
               .get(playerLink[i])
               .then((response) => {
-                const playerLink = []
                 const html = response.data;
                 const $ = cheerio.load(html);
                 const statName = [];
