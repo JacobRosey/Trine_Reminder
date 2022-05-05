@@ -307,17 +307,6 @@ a{
         justify-content: left;
         margin-left: 1em;
 
-        //This must be in the wrong place
-        #change-player{
-            display: inline-block;
-            border: none;
-            background: none;
-            margin: .25em;
-            margin-left: 2em;
-            font-weight: bold;
-            transform: scale(1.25);
-            color: var(--secondary-color);
-        }
     }
     #stats{
         display: grid;
