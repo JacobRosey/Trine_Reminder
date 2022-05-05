@@ -13,10 +13,9 @@ app.use(cors())
 
 const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
-//const stats = 'https://www.trinethunder.com/sports/sball/2021-22/players/adrienneroseybff7'
 const players = 'https://www.trinethunder.com/sports/sball/2021-22/teams/trine?view=roster'
 const playerStats = 'https://www.trinethunder.com'
-const playerLink = []
+
 
 let port = process.env.PORT || 3000;
 if(port == null || port == ""){
@@ -53,7 +52,8 @@ app.get('/record', (req, res) => {
 
 app.get('/players', (req, res) => {
 //Big thanks to jfriend00 on stackoverflow for
-//the proper async/await/promise structure
+//the proper async/await/promise structure. And
+//the bonus functions for seeing how long request takes
 const zeroes = "000000000000000000000000000000";
 
 function zeroPad(num, padLen) {
