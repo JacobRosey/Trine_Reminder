@@ -52,7 +52,9 @@ app.get('/record', (req, res) => {
 })
 
 app.get('/players', (req, res) => {
-    const zeroes = "000000000000000000000000000000";
+//Big thanks to jfriend00 on stackoverflow for
+//the proper async/await/promise structure
+const zeroes = "000000000000000000000000000000";
 
 function zeroPad(num, padLen) {
     let str = num + "";
