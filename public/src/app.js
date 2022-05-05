@@ -189,5 +189,5 @@ function jumpToGame(){
             setTimeout(() => {anim[i].animate(foundGame, animDuration)}, 500)
             return;  
         } 
-    } alert('The next game is TBD, or the season is over. Check in later!')
+    } alert('The next game is TBD, or the season is over. Check back later!')
 }
