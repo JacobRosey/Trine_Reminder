@@ -45,11 +45,11 @@ fetch('https://trine-scraper.herokuapp.com/players')
         }if(names.indexOf(data[i]) == -1 && statDesc.indexOf(data[i])== -1){
             statNum.push(data[i])
         }
-        if(data[i].length == 6){
+        /*if(data[i].length == 6){
             //Change to class list switcher for 6/8 grid-template-col
             data[i].push('', '')
                 
-        }
+        }*/
     }
     console.log(names, statDesc, statNum)
     
