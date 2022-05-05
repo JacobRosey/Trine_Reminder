@@ -4,7 +4,6 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const express = require('express')
 const cors = require('cors')
-//const fs = require('fs')
 const router = express.Router()
 const path = require('path')
 
