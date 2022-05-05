@@ -71,7 +71,6 @@ body{
     margin-left: 3em;
 }
 
-//This must be in the wrong place
 #change-player{
     display: inline-block;
     border: none;
@@ -81,6 +80,11 @@ body{
     font-weight: bold;
     transform: scale(1.25);
     color: var(--secondary-color);
+}
+
+#waiting{
+    margin: 1em;
+    margin-left: 3em;
 }
 
 #stats{
