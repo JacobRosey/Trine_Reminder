@@ -45,11 +45,11 @@ fetch('https://trine-scraper.herokuapp.com/players')
         }if(names.indexOf(data[i]) == -1 && statDesc.indexOf(data[i])== -1){
             statNum.push(data[i])
         }
-        /*if(data[i].length == 6){
+        if(data[i].length == 6){
             //Change to class list switcher for 6/8 grid-template-col
             data[i].push('', '')
                 
-        }*/
+        }
     }
     console.log(names, statDesc, statNum)
     
@@ -67,11 +67,13 @@ fetch('https://trine-scraper.herokuapp.com/players')
         for(let i=0; i<names.length; i++){
             if(this.value == names[i]){
                 for(let j=0; j<statDesc[i].length; j++){
-                    if(statDesc[i].length == 6 && !statsArea.classList.contains('pos-stats')){
+                    //Need to make #stats a class because id's override
+                    //class properties
+                    /*if(statDesc[i].length == 6 && !statsArea.classList.contains('pos-stats')){
                         statsArea.classList.add('pos-stats')
                     } else if(statDesc[i].length == 8 && statsArea.classList.contains('pos-stats')){
                         statsArea.classList.remove('pos-stats')
-                    }
+                    }*/
                     var statD = `<p id="stat-desc">`+statDesc[i][j]+`</p>`
                     statDisplay.innerHTML += statD
                 }
@@ -86,23 +88,7 @@ fetch('https://trine-scraper.herokuapp.com/players')
 
              
 }).catch(err=>console.log(err))
-//Append my sister's current stats
-/*
-fetch('https://trine-scraper.herokuapp.com/stats')
-    .then(response => {return response.json()})
-    .then(data => {
-        console.log(data)
-        for(let i=0; i<data[0].length; i++){
-            var statDesc = `<p id="stat-desc">`+data[0][i].toUpperCase()+`</p>`   
-            statDisplay.innerHTML += statDesc
-        }
-        for(i=0; i<data[1].length; i++){
-            var statNum = `<p id="stat-num">`+data[1][i]+`</p>`
-            statDisplay.innerHTML += statNum
-        }
-             
-    }).catch(err=>console.log(err))
-*/
+
 //Append the 5 most recent news articles about the team
 fetch('https://trine-scraper.herokuapp.com/news')
     .then(response => {return response.json()})
