@@ -6,12 +6,6 @@ const newsDisplay = document.querySelector('#news')
 const recDisplay = document.querySelector('#record')
 const statDisplay = document.querySelector('#stats')
 
-
-window.addEventListener('DOMContentLoaded', () =>{
-    const waiting = document.getElementById('player-stats')
-    waiting.innerHTML += `<p id="waiting" style="margin:1em;color:rgb(180,180,180);">Please wait while players are loading...</p>`
-})
-
 //PWA service worker
 if("serviceWorker" in navigator) {
     navigator.serviceWorker.register('/sw.js').then(registration => {
@@ -51,15 +45,13 @@ fetch('https://trine-scraper.herokuapp.com/players')
             statNum.push(data[i])
         }
             if(data[i].length == 6){
-            //Need to add blank spaces to position players stats
-            //Because they have 2 less stats than pitchers. This
-            //Saves me from refactoring css
+            //Change to class list switcher for 6/8 grid-template-col
             data[i].push('', '')
         }
     }
     console.log(names, statDesc, statNum)
     
-    //document.getElementById('waiting').remove()
+    document.getElementById('waiting').remove()
     var select = document.getElementById('change-player')
     for(let i=0; i<names.length; i++){
         var name = names[i]
