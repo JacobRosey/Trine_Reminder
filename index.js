@@ -52,74 +52,106 @@ app.get('/record', (req, res) => {
 })
 
 app.get('/players', (req, res) => {
-    function getPlayers() {
-      return new Promise((resolve, reject) => {
-        axios(players)
-          .then((response) => {
-            //const playerLink = []
-            const html = response.data;
-            const $ = cheerio.load(html);
-            
-            $("td.text.pinned-col > a", html).each(function () {
-              var link = $(this).attr("href");
-              //if link not yet in array, push to array
-              if (playerLink.indexOf(playerStats + link) === -1) {
+    const zeroes = "000000000000000000000000000000";
+
+function zeroPad(num, padLen) {
+    let str = num + "";
+    let padNum = padLen - str.length;
+    if (padNum > 0) {
+        str = zeroes.slice(0, padNum) + str;
+    }
+    return str;
+}
+
+const base = Date.now();
+
+function log(...args) {
+    let delta = Date.now() - base;
+    let deltaPad = zeroPad(delta, 6);
+    console.log(deltaPad + ": ", ...args);
+}
+
+let getPlayersT = 0;
+let cheerioT = 0;
+
+async function run() {
+
+    async function getPlayers() {
+        log("begin getPlayers()");
+        let startT = Date.now();
+        const playerLink = [];
+        const response = await axios(players);
+        const html = response.data;
+        const $ = cheerio.load(html);
+
+        $("td.text.pinned-col > a", html).each(function() {
+            const link = $(this).attr("href");
+            //if link not yet in array, push to array
+            if (playerLink.indexOf(playerStats + link) === -1) {
                 playerLink.push(playerStats + link);
-              }
+            }
+        });
+        log("end getPlayers()")
+        getPlayersT += Date.now() - startT;
+        return playerLink;
+    }
+
+    async function getPlayerStats(playerLink) {
+        log("begin getPlayerStats");
+        const statsArray = [];
+        await Promise.all(playerLink.map(async link => {
+            log(`begin get ${link}`)
+            const response = await axios.get(link);
+            log(`after get ${link}`)
+            const html = response.data;
+            const startT = Date.now();
+            const $ = cheerio.load(html);
+            const statName = [];
+            const statDesc = [];
+            const statNum = [];
+
+            $("h2 > span:nth-child(1)", html).each(function() {
+                var name = $(this).text();
+                statName.push(name);
             });
-            resolve()
-            //resolve(playerLink);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      });
+            $(".stat-title", html).each(function() {
+                var stat1 = $(this).text();
+                statDesc.push(stat1);
+            });
+            $(".stat-value", html).each(function() {
+                var stat2 = $(this).text();
+                statNum.push(stat2);
+            });
+            //Conditional is here because sometimes statsArray
+            //gets filled multiple times
+            if (statsArray.length < 63) {
+                statsArray.push(statName, statDesc, statNum);
+            }
+            cheerioT += Date.now() - startT;
+            log(`after cheerio parse ${link}`);
+        }));
+        return statsArray;
     }
-    function getPlayerStats(/*playerLink*/) {
-      setTimeout(async () => {
-        const statsArray = []
-        for (let i = 0; i < playerLink.length; i++) {
-          await new Promise((resolve, reject) => {
-            axios
-              .get(playerLink[i])
-              .then((response) => {
-                const html = response.data;
-                const $ = cheerio.load(html);
-                const statName = [];
-                const statDesc = [];
-                const statNum = [];
-  
-                $("h2 > span:nth-child(1)", html).each(function () {
-                  var name = $(this).text();
-                  statName.push(name);
-                });
-                $(".stat-title", html).each(function () {
-                  var stat1 = $(this).text();
-                  statDesc.push(stat1);
-                });
-                $(".stat-value", html).each(function () {
-                  var stat2 = $(this).text();
-                  statNum.push(stat2);
-                });
-                //Conditional is here because sometimes statsArray
-                //gets filled multiple times
-                if (statsArray.length < 63) {
-                  statsArray.push(statName, statDesc, statNum);
-                }
-                resolve();
-              })
-              .catch((err) => console.log(err));
-          });
-        }
-        res.json(statsArray)
-        //res.send(JSON.stringify(statsArray));
-      }, 150);
+
+    try {
+        log("begin all")
+        const playerLink = await getPlayers();
+        const statsArray = await getPlayerStats(playerLink);
+        log("end all")
+        res.json(statsArray);
+    } catch (e) {
+        console.log(e);
     }
-    
-    getPlayers()
-      .then(getPlayerStats)
-      .catch((err) => console.log(err));
-  });
+}
+
+run().then(result => {
+    console.log(result);
+    console.log(`getPlayers() took ${getPlayersT}ms`);
+    console.log(`cheerio processing took ${cheerioT}ms`);
+}).catch(err => {
+    console.log(err);
+});
+})
 /*
 app.get('/stats', (req, res) => {
     axios(stats)
