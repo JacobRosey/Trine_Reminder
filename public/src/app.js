@@ -34,6 +34,7 @@ fetch('https://trine-scraper.herokuapp.com/players')
     let names =[];
     let statDesc = [];
     let statNum = [];
+    const statsArea = document.getElementById('stats')
 
     for(let i=0; i<data.length; i++){
         if(data[i].length == 1){
@@ -44,9 +45,12 @@ fetch('https://trine-scraper.herokuapp.com/players')
         }if(names.indexOf(data[i]) == -1 && statDesc.indexOf(data[i])== -1){
             statNum.push(data[i])
         }
-            if(data[i].length == 6){
+        if(data[i].length == 6){
             //Change to class list switcher for 6/8 grid-template-col
-            data[i].push('', '')
+            //data[i].push('', '')
+            statsArea.classList.add('pos-stats')
+        } else if(data[i].length == 8 && statsArea.classList.contains('pos-stats')){
+            statsArea.classList.remove('pos-stats')
         }
     }
     console.log(names, statDesc, statNum)
