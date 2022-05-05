@@ -133,7 +133,7 @@ body {
 
 #waiting {
   margin: 1em;
-  margin-left: 1.5em;
+  margin-left: 1em;
   color: #b4b4b4;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
