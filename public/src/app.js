@@ -47,14 +47,8 @@ fetch('https://trine-scraper.herokuapp.com/players')
         }
         if(data[i].length == 6){
             //Change to class list switcher for 6/8 grid-template-col
-            //data[i].push('', '')
-            if(!statsArea.classList.contains('pos-stats')){
-                statsArea.classList.add('pos-stats')
-            }
-            
-        } 
-        if(data[i].length == 8 && statsArea.classList.contains('pos-stats')){
-            statsArea.classList.remove('pos-stats')
+            data[i].push('', '')
+                
         }
     }
     console.log(names, statDesc, statNum)
