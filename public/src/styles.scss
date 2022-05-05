@@ -82,6 +82,10 @@ body{
     transform: scale(1.25);
     color: var(--secondary-color);
 }
+select option {
+    background-color: var(--primary-color);
+    color: var(--secondary-color)
+}
 
 #waiting{
     margin: 1em;
