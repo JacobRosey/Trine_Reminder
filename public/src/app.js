@@ -67,6 +67,11 @@ fetch('https://trine-scraper.herokuapp.com/players')
         for(let i=0; i<names.length; i++){
             if(this.value == names[i]){
                 for(let j=0; j<statDesc[i].length; j++){
+                    if(statDesc[i].length == 6 && !statsArea.classList.contains('pos-stats')){
+                        statsArea.classList.add('pos-stats')
+                    } else if(statDesc[i].length == 8 && statsArea.classList.contains('pos-stats')){
+                        statsArea.classList.remove('pos-stats')
+                    }
                     var statD = `<p id="stat-desc">`+statDesc[i][j]+`</p>`
                     statDisplay.innerHTML += statD
                 }
