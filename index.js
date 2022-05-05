@@ -9,7 +9,7 @@ const path = require('path')
 
 const app = express()
 app.use(cors())
-
+                            //Just change to 2022/23 for next season
 const schedule = 'https://www.trinethunder.com/sports/sball/2021-22/schedule'
 const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
 const players = 'https://www.trinethunder.com/sports/sball/2021-22/teams/trine?view=roster'

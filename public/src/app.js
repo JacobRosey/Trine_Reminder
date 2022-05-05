@@ -138,11 +138,6 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
                 const liveGame = document.getElementById('game-today')
                 liveGame.classList.remove('hidden')
                 liveGame.classList.add('game-today')
-                //Scraping links would be very time consuming to figure out
-                //because of inconsistent setup on Trine site; sometimes there is 
-                //nothing, sometimes there is box score, recap, video, sometimes 
-                //there is a random combination of the three. 
-                //This means the array indices don't line up like all the others.
                 //For now, the alert will only link to trine broadcasting on Vimeo,
                 //meaning only home games will be watchable via the link
             }
@@ -177,7 +172,7 @@ function jumpToGame(){
             if(window.innerWidth >= 400){
                 window.scrollBy(0, -55)
             } else {window.scrollBy(0, -110)}
-            //Cannot read properties of null - reading 'style'
+            
             let divBackground = anim[i].style.backgroundColor; 
             const foundGame = [
                        {backgroundColor: divBackground},
