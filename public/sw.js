@@ -1,9 +1,9 @@
 var cacheName = 'v1';
 var cacheFiles = [
     './',
-    './index.html',
-    './src/app.js',
-    './src/styles.css',
+    './public/index.html',
+    './public/src/app.js',
+    './public/src/styles.css',
     './index.js',
     './src/trine192.png'
 ]
