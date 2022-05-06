@@ -5,7 +5,7 @@ var cacheFiles = [
     './src/app.js',
     './src/styles.css',
     './index.js',
-    '/src/trine192.png'
+    './src/trine192.png'
 ]
 
 self.addEventListener('install', e => {
