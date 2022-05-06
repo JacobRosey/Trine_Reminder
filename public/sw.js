@@ -20,6 +20,18 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activate', (e) => {
     console.log("Service Worker activated")
+    
+    e.waitUntil(
+
+        caches.keys().then((cacheNames) => {
+            return Promise.all(cacheNames.map((thisCacheName => {
+                if(thisCacheName !== cacheName){
+                    console.log("Service Worker is removing cached files from ", thisCacheName)
+                    return caches.delete(thisCacheName)
+                }
+            })))
+        })
+    )
 })
 
 self.addEventListener('fetch', (e) => {
