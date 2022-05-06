@@ -1,12 +1,12 @@
 var cacheName = 'v1';
 var cacheFiles = [
     //One/some of these routes are wrong, fix pls
-    './',
-    './public/index.html',
-    './public/src/app.js',
-    './public/src/styles.css',
-    './index.js',
-    './public/src/trine192.png'
+    '/',
+    'public/index.html',
+    'public/src/app.js',
+    'public/src/styles.css',
+    'index.js',
+    'public/src/trine192.png'
 ]
 
 self.addEventListener('install', e => {
