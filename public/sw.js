@@ -5,7 +5,6 @@ var cacheFiles = [
     '/index.html',
     '/src/app.js',
     '/src/styles.css',
-    'index.js',
     '/src/trine192.png'
 ]
 
