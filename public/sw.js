@@ -36,6 +36,18 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
     console.log("Service Worker Fetching", e.request.url)
+
+    e.respondWith(
+        caches.match(e.request)
+        .then((response => {
+            if(response){
+                console.log("Found in cache: ", e.request.url)
+                return response
+            } else{
+                return fetch(e.request)
+            }
+        }))
+    )
 })
 
 
