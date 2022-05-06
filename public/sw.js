@@ -43,10 +43,25 @@ self.addEventListener('fetch', (e) => {
             if(response){
                 console.log("Found in cache: ", e.request.url)
                 return response
-            } else{
-                return fetch(e.request)
-            }
-        }))
+            } 
+                var requestClone = e.request.clone()
+                fetch(requestClone)
+                .then((response => {
+                    if(!response) {
+                        console.log("No response")
+                        return response;
+                    } 
+
+                    var responseClone = response.clone()
+                    caches.open(cacheName)
+                    .then((cache => {
+                        cache.put(e.request, responseClone)
+                        return response
+                    }))
+                }))
+        })).catch((err)=> {
+            console.log("Service worker encountered error: ", err)
+        })
     )
 })
 
