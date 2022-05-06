@@ -1,9 +1,8 @@
-var cacheName = 'v1';
+var cacheName = 'v2';
 var cacheFiles = [
     //One/some of these routes are wrong, fix pls
     './',
     '/index.html',
-    '/src/app.js',
     '/src/styles.css',
     '/src/trine192.png'
 ]
