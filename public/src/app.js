@@ -51,7 +51,6 @@ fetch('https://trine-scraper.herokuapp.com/players')
                 
         }
     }
-    console.log(names, statDesc, statNum)
     
     document.getElementById('waiting').remove()
     var select = document.getElementById('change-player')
@@ -93,7 +92,6 @@ fetch('https://trine-scraper.herokuapp.com/players')
 fetch('https://trine-scraper.herokuapp.com/news')
     .then(response => {return response.json()})
     .then(data => {
-        console.log(data)
         
         for(let i=0; i<data[0].length; i++){
             let headline = `<div class ="news-div"<h3 id="headline">`+ data[0][i] +`</h3>`

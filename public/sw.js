@@ -1,5 +1,6 @@
 var cacheName = 'v1';
 var cacheFiles = [
+    //One/some of these routes are wrong, fix pls
     './',
     './public/index.html',
     './src/app.js',
