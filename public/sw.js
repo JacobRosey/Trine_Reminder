@@ -1,4 +1,4 @@
-var cacheName = 'v3';
+var cacheName = 'v4';
 var cacheFiles = [
     //One/some of these routes are wrong, fix pls
     './',
