@@ -36,7 +36,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
     console.log("Service Worker Fetching", e.request.url)
 
-    e.respondWith(
+    /*e.respondWith(
         caches.match(e.request)
         .then((response => {
             if(response){
@@ -61,7 +61,7 @@ self.addEventListener('fetch', (e) => {
         })).catch((err)=> {
             console.log("Service worker encountered error: ", err)
         })
-    )
+    )*/
 })
 
 

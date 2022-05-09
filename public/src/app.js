@@ -27,7 +27,7 @@ fetch('https://trine-scraper.herokuapp.com/record')
 
         recDisplay.innerHTML = overall + conf + streak
     })
-    
+
 fetch('https://trine-scraper.herokuapp.com/players')
 .then(response => response.json())
 .then(data => {
