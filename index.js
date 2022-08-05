@@ -50,7 +50,7 @@ app.get('/record', (req, res) => {
 })
 
 app.get('/players', (req, res) => {
-//Big thanks to jfriend00 on stackoverflow for
+//Thanks to jfriend00 on stackoverflow for
 //the proper async/await/promise structure. And
 //the bonus functions for seeing how long request takes
 const zeroes = "000000000000000000000000000000";
@@ -153,28 +153,6 @@ run().then(result => {
     console.log(err);
 });
 })
-/*
-app.get('/stats', (req, res) => {
-    axios(stats)
-    .then(response => {
-        const html = response.data
-        const $ = cheerio.load(html)
-        const statDesc = []
-        const statNum = []
-        const statArr = [statDesc, statNum]
-
-        $('.stat-title', html).each(function(){
-            var stat1 = $(this).text()
-            statDesc.push(stat1)
-        })
-        $('.stat-value', html).each(function(){
-            var stat2 = $(this).text()
-            statNum.push(stat2)
-        })
-        res.json(statArr)
-    }).catch(err => console.log(err))
-})
-*/
 
 app.get('/schedule', (req, res) => {
 
@@ -261,7 +239,7 @@ var schedApp = new function(){
 
                     //Every other date is blank, but here I set blanks to the same date
                     //as the last game. If the date is blank, it's played on same 
-                    //date as last game. check Trine schedule to see what I mean
+                    //date as last game. Check Trine schedule to see what I mean
                     if(data[i][j].length == 1){
                         data[i][j] = data[i][j-1]
                     }
@@ -283,31 +261,13 @@ var schedApp = new function(){
 }
 
 var newsApp = new function(){
-    var archiveArr = [];
+    //Log news articles
     this.logNews = function(articles){
         for(let i=0; i<articles.length; i++){
             for(let j=0; j<articles[i].length; j++){
                 console.log(articles[i][j] + "\n")
-                /*if(i == 0){
-                    if(articles[i][j].includes("Rosey")){
-                        archiveArr += articles[0][j] + articles[1][j] + articles[2][j]
-                    }
-                }*/
             }
         }
-        /*
-        let content = '';
-        content = archiveArr[0] + archiveArr[1] + archiveArr[2]
-        if('/Users/jacobrosey/Desktop/Web Dev Projects/Trine Reminder/archive.txt'.includes(!content)){
-            fs.writeFile('/Users/jacobrosey/Desktop/Web Dev Projects/Trine Reminder/archive.txt', content, { flag: 'a+' }, err =>
-            {
-                if(err){
-                    console.error(err)
-                    return
-                }
-    
-            }) 
-        }*/
     }
 }
     

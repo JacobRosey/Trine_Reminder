@@ -66,13 +66,6 @@ fetch('https://trine-scraper.herokuapp.com/players')
         for(let i=0; i<names.length; i++){
             if(this.value == names[i]){
                 for(let j=0; j<statDesc[i].length; j++){
-                    //Need to make #stats a class because id's override
-                    //class properties
-                    /*if(statDesc[i].length == 6 && !statsArea.classList.contains('pos-stats')){
-                        statsArea.classList.add('pos-stats')
-                    } else if(statDesc[i].length == 8 && statsArea.classList.contains('pos-stats')){
-                        statsArea.classList.remove('pos-stats')
-                    }*/
                     var statD = `<p id="stat-desc">`+statDesc[i][j]+`</p>`
                     statDisplay.innerHTML += statD
                 }
@@ -126,8 +119,7 @@ fetch('https://trine-scraper.herokuapp.com/schedule')
             if(data[0][i].includes("May")){
                 data[0][i] = data[0][i].slice(0, 3)+ " " + data[0][i].slice(3,5)
             }
-            //Not sure why I used id instead of classes....
-            //Fix that when everything else is finished
+            //Not sure why I used id instead of classes, fix that later
             let date = `<div class="animate-div"id="background-`+oddeven+`"><h3>`+ data[0][i] +`</h3>`
             let opponent = `<p id="sched-opp">`+ data[1][i] +`</p>`
             let status = `<p id="status">`+ data[2][i] +`</p></div><br>`
@@ -158,7 +150,7 @@ function jumpToGame(){
       }
     //Ideally you would find the next date (starting from today) which exists
     //in the DOM in the schedule section. However, this approach does the job
-    //with much less code
+    //Only games that are currently being played or yet to be played contain "AM", "PM" or "of"
 
     for(let i=0; i<status.length; i++){
         statusArr.push(status[i].innerHTML) 
