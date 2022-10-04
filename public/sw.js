@@ -1,6 +1,5 @@
 var cacheName = 'v5';
 var cacheFiles = [
-    //One/some of these routes are wrong, fix pls
     './',
     '/index.html',
     '/src/styles.css',
@@ -36,32 +35,6 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
     console.log("Service Worker Fetching", e.request.url)
 
-    /*e.respondWith(
-        caches.match(e.request)
-        .then((response => {
-            if(response){
-                console.log("Found in cache: ", e.request.url)
-                return response
-            } 
-                var requestClone = e.request.clone()
-                fetch(requestClone)
-                .then((response => {
-                    if(!response) {
-                        console.log("No response")
-                        return response;
-                    } 
-
-                    var responseClone = response.clone()
-                    caches.open(cacheName)
-                    .then((cache => {
-                        cache.put(e.request, responseClone)
-                        return response
-                    }))
-                }))
-        })).catch((err)=> {
-            console.log("Service worker encountered error: ", err)
-        })
-    )*/
 })
 
 
