@@ -51,6 +51,7 @@ fetch('https://trine-scraper.herokuapp.com/players')
                 
         }
     }
+    console.log(names)
     
     document.getElementById('waiting').remove()
     var select = document.getElementById('change-player')
