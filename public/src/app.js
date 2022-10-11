@@ -23,8 +23,8 @@ fetch('https://trine-scraper.herokuapp.com/record')
     .then(data => {
         console.log(data)
         let overall =  `<h3 id="overall-rec">Overall: `+data[0]+`</h3>`
-        let conf = `<h3 id="conf-rec">Conference: `+data[3]+`</h3>`
-        let streak = `<h3 id="streak">Current Streak: `+data[5]+`</h3>`
+        let conf = `<h3 id="conf-rec">Conference: `+data[1]+`</h3>`
+        let streak = `<h3 id="streak">Current Streak: `+data[2]+`</h3>`
 
         recDisplay.innerHTML = overall + conf + streak
     })
