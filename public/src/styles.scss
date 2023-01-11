@@ -482,6 +482,9 @@ a{
 }
 
 @media only screen and (max-width: 400px) {
+    body{
+        width: 100%;
+    }
     #banner{
         font-size: .75em;
         width: 20em;
