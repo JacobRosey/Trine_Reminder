@@ -223,6 +223,7 @@ select option {
   margin-top: 4em;
   margin-left: 2em;
   width: 100%;
+  align-items: center;
 }
 #feed #background-odd {
   display: grid;
