@@ -583,7 +583,7 @@ a{
     #news{
         display: flex;
         flex-direction: column;
-        align-items: left;
+        align-self: left;
         #headline{
             font-size: .75em;
             margin-left: .5em;

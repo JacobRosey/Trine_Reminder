@@ -603,7 +603,7 @@ a {
   #news {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-self: left;
   }
   #news #headline {
     font-size: 0.75em;
