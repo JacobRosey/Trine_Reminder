@@ -519,8 +519,8 @@ a {
     padding: 1em;
     padding-right: 2em;
     padding-left: 2em;
-    margin: 0.5em;
-    width: 100%;
+    margin: 1em;
+    width: 90%;
   }
   #date {
     font-weight: bolder;
@@ -536,7 +536,7 @@ a {
   }
   #record {
     display: grid;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 120px 120px 120px;
     font-size: 0.25em;
     text-align: center;
     color: rgb(180, 180, 180);
