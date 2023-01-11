@@ -322,79 +322,6 @@ a{
     color: rgb(180, 180, 180);
 }
 
-@media only screen and (max-width: 400px) {
- 
-#feed{
-    display: flex;
-    flex-direction: column;
-    margin-top: 4em;
-    margin-left: 2em;
-    width: 400px;
-
-    #background-odd{
-        display: grid;
-        grid-template-columns: 200px 200px 200px;
-        background-color: rgb(180, 180, 180);
-        text-align: center;
-        height: 5em;
-        width: 350px;
-        padding: .5em;
-        border-radius: 1em;
-        color: black;
-        h3{
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            margin: 1em;
-            margin-left: 4em;
-            padding-top: .5em;
-            width: 50%;
-            text-align: center;
-            border-radius: 20px;
-        }
-        #sched-opp{
-            width: 130%;
-            margin-left: 2em;
-            margin-top: 2em;
-        }
-        #status{
-            margin-top: 2em;
-            margin-left: 6em;
-        }
-    }
-    #background-even{
-        display: grid;
-        grid-template-columns: 200px 200px 200px;
-        background-color: whitesmoke;
-        text-align: center;
-        height: 5em;
-        width: 350px;
-        padding: .5em;
-        border-radius: 1em;
-        color: black;
-        h3{
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            margin: 1em;
-            margin-left: 4em;
-            padding-top: .5em;
-            width: 50%;
-            text-align: center;
-            border-radius: 20px;
-        }
-        #sched-opp{
-            width: 130%;
-            margin-left: 2em;
-            margin-top: 2em;
-        }
-        #status{
-            margin-left: 6em;
-            margin-top: 2em;
-        }
-    }
-}
-
-
-}
 
 @media only screen and (max-width: 500px) {
     #record{
@@ -475,7 +402,7 @@ a{
         }
     }
     #news{
-        margin: 0;
+        margin: 1em;
     }
     #next-game{
         margin-right: .75em;
@@ -487,7 +414,8 @@ a{
         flex-direction: column;
         margin-top: 4em;
         margin-left: .25em;
-        margin-right: 1em;
+        margin-right: .25em;
+        width: 100%;
 
         #background-odd{
             display: grid;
