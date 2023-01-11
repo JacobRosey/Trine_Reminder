@@ -254,9 +254,9 @@ var schedApp = new function(){
                 //Add 'vs.' or '@' to team name
                 if(i==1){
                     if(data[3][j] == 'at'){
-                        data[3][j] = '@ ';
+                        data[3][j] = '✈️ ';
                     } else{
-                        data[3][j] = ''
+                        data[3][j] = '🏠 '
                     }
                     data[i][j] = data[3][j].concat(data[i][j])
                 }
