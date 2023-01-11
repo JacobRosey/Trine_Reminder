@@ -634,7 +634,7 @@ a {
   #feed {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     margin-top: 3em;
     margin: auto;
   }
