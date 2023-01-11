@@ -632,7 +632,7 @@ a {
     border-radius: 5px;
     float: left;
     cursor: pointer;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
   #feed {
     display: flex;
