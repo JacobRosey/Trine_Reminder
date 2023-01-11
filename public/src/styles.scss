@@ -581,7 +581,7 @@ a{
         }
     }
     #news{
-        margin: auto;
+        align-items: left;
         #headline{
             font-size: .75em;
             margin-left: .5em;
@@ -611,6 +611,7 @@ a{
         border-radius: 5px;
         float: left;
         cursor: pointer;
+        margin-bottom: .5em;
     }
 
     #feed{
