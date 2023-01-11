@@ -226,6 +226,7 @@ axios(news)
 
 var schedApp = new function(){
     this.cleanData = function(data, result){
+        console.log(data)
         //Iterate through 2d array to access all data
         for(let i=0; i<data.length; i++){
             for(let j=0; j<data[i].length; j++){
