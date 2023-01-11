@@ -101,7 +101,7 @@ body {
   margin: 0.25em;
   margin-left: 2em;
   font-weight: bold;
-  transform: scale(1.25);
+  transform: scale(1.05);
   color: var(--secondary-color);
 }
 
@@ -222,6 +222,7 @@ select option {
   flex-direction: column;
   margin-top: 4em;
   margin-left: 2em;
+  width: 100%;
 }
 #feed #background-odd {
   display: grid;
