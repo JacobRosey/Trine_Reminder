@@ -101,7 +101,7 @@ body {
   margin: 0.25em;
   margin-left: 2em;
   font-weight: bold;
-  transform: scale(1.05);
+  transform: scale(1.1);
   color: var(--secondary-color);
 }
 
