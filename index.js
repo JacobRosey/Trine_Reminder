@@ -164,7 +164,8 @@ axios(schedule)
     const gameOpp = []
     const gameStatus = []
     const gameResult = []
-    const games = [gameDate, gameOpp, gameStatus]
+    const homeoraway = []
+    const games = [gameDate, gameOpp, gameStatus, homeoraway]
 
     //Find all elements of given class names within each event row element
     $('.e_date', html).each(function(){
@@ -182,6 +183,10 @@ axios(schedule)
     $('.e_result', html).each(function (){
         var result = $(this).text()
         gameResult.push(result)
+    })
+    $('.va', html).each(function(){
+        var va = $(this).text()
+        homeoraway.push(va)
     })
 
     schedApp.cleanData(games,gameResult);
