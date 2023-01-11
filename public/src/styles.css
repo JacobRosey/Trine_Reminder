@@ -600,6 +600,9 @@ a {
     color: var(--primary-color);
     cursor: pointer;
   }
+  #news {
+    margin: 2em;
+  }
   #news #headline {
     font-size: 0.75em;
     margin-left: 0.5em;
