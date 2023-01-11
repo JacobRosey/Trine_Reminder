@@ -432,6 +432,7 @@ a {
     cursor: pointer;
   }
   #news {
+    width: 400px;
     margin: 1em;
     margin-left: 2em;
   }
