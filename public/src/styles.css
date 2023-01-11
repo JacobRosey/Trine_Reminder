@@ -602,7 +602,7 @@ a {
   }
   #news {
     float: left;
-    margin-left: -1em;
+    margin-left: -1.5em;
   }
   #news #headline {
     font-size: 0.75em;
