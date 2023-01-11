@@ -601,6 +601,8 @@ a {
     cursor: pointer;
   }
   #news {
+    display: flex;
+    flex-direction: column;
     align-items: left;
   }
   #news #headline {
@@ -637,7 +639,7 @@ a {
     flex-direction: column;
     align-items: left;
     margin-top: 3em;
-    margin: auto;
+    margin: 0.25em;
   }
   #feed #background-odd {
     display: block;

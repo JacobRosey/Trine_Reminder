@@ -581,6 +581,8 @@ a{
         }
     }
     #news{
+        display: flex;
+        flex-direction: column;
         align-items: left;
         #headline{
             font-size: .75em;
@@ -619,7 +621,7 @@ a{
         flex-direction: column;
         align-items: left;
         margin-top: 3em;
-        margin: auto;
+        margin: .25em;
 
         #background-odd{
             display: block;
