@@ -5,66 +5,51 @@
 
 @-webkit-keyframes softball {
   0% {
-    -webkit-transform: scale(2) rotateZ(0deg);
-            transform: scale(2) rotateZ(0deg);
+    transform: scale(2) rotateZ(0deg);
   }
   50% {
-    -webkit-transform: scale(2.5) rotateZ(360deg);
-            transform: scale(2.5) rotateZ(360deg);
+    transform: scale(2.5) rotateZ(360deg);
   }
   100% {
-    -webkit-transform: scale(2) rotateZ(0deg);
-            transform: scale(2) rotateZ(0deg);
+    transform: scale(2) rotateZ(0deg);
   }
 }
 
 @keyframes softball {
   0% {
-    -webkit-transform: scale(2) rotateZ(0deg);
-            transform: scale(2) rotateZ(0deg);
+    transform: scale(2) rotateZ(0deg);
   }
   50% {
-    -webkit-transform: scale(2.5) rotateZ(360deg);
-            transform: scale(2.5) rotateZ(360deg);
+    transform: scale(2.5) rotateZ(360deg);
   }
   100% {
-    -webkit-transform: scale(2) rotateZ(0deg);
-            transform: scale(2) rotateZ(0deg);
+    transform: scale(2) rotateZ(0deg);
   }
 }
-
 @-webkit-keyframes breathe {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
-
 @keyframes breathe {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
-
 .animate-div {
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 body {
@@ -87,36 +72,25 @@ body {
 
 .flex-container {
   display: flexbox;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 2em;
   padding: 1em;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   overflow-x: visible;
 }
 
 #record {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 240px 240px 240px;
-      grid-template-columns: 240px 240px 240px;
+  grid-template-columns: 240px 240px 240px;
   text-align: center;
-  color: #b4b4b4;
+  color: rgb(180, 180, 180);
 }
 
 #player-stats {
   font-size: 1.25em;
   margin-top: 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  justify-content: left;
   margin-left: 3em;
 }
 
@@ -124,11 +98,10 @@ body {
   display: inline-block;
   border: none;
   background: none;
-  margin: .25em;
+  margin: 0.25em;
   margin-left: 2em;
   font-weight: bold;
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
   color: var(--secondary-color);
 }
 
@@ -140,60 +113,49 @@ select option {
 #waiting {
   margin: 1em;
   margin-left: 1em;
-  color: #b4b4b4;
-  -webkit-transform: scale(0.75);
-          transform: scale(0.75);
+  color: rgb(180, 180, 180);
+  transform: scale(0.75);
 }
 
 #stats {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (75px)[8];
-      grid-template-columns: repeat(8, 75px);
+  grid-template-columns: repeat(8, 75px);
   width: 75%;
   margin-left: 3em;
   margin-top: 1em;
-  color: #b4b4b4;
+  color: rgb(180, 180, 180);
 }
-
 #stats #stat-desc {
   padding-left: 2em;
   border-bottom: 1px solid;
   border-bottom-width: 3px;
   height: 50%;
 }
-
 #stats #stat-num {
   padding-left: 2em;
   margin-top: -1px;
 }
 
 .pos-stats {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (95px)[6];
-      grid-template-columns: repeat(6, 95px);
+  grid-template-columns: repeat(6, 95px);
   width: 75%;
   margin-left: 3em;
   margin-top: 1em;
-  color: #b4b4b4;
+  color: rgb(180, 180, 180);
 }
-
 .pos-stats #stat-desc {
   padding-left: 2em;
   border-bottom: 1px solid;
   border-bottom-width: 3px;
   height: 50%;
 }
-
 .pos-stats #stat-num {
   padding-left: 2em;
   margin-top: -1px;
 }
 
 .game-today {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 2em;
   margin-left: 2em;
@@ -201,7 +163,7 @@ select option {
   margin-bottom: 2em;
   font-size: 1.25em;
   border-radius: 2em;
-  background-color: #b4b4b4;
+  background-color: rgb(180, 180, 180);
   -webkit-animation-name: breathe;
           animation-name: breathe;
   -webkit-animation-duration: 4s;
@@ -211,7 +173,6 @@ select option {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-
 .game-today #emoji {
   position: absolute;
   margin-left: 3em;
@@ -227,18 +188,15 @@ select option {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-
 .game-today p {
   padding-top: 10px;
   padding-bottom: 10px;
   color: var(--primary-color);
   margin-left: 6em;
 }
-
 .game-today p #game-live {
-  font-size: .5em;
+  font-size: 0.5em;
 }
-
 .game-today p #game-link {
   text-decoration: underline;
   color: var(--primary-color);
@@ -260,84 +218,67 @@ select option {
 }
 
 #feed {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-top: 4em;
   margin-left: 2em;
 }
-
 #feed #background-odd {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px;
-  background-color: #b4b4b4;
+  grid-template-columns: 200px 200px 200px;
+  background-color: rgb(180, 180, 180);
   text-align: center;
   height: 5em;
   width: 90%;
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 1em;
   color: black;
 }
-
 #feed #background-odd h3 {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   margin: 1em;
   margin-left: 4em;
-  padding-top: .5em;
+  padding-top: 0.5em;
   width: 50%;
   text-align: center;
   border-radius: 20px;
 }
-
 #feed #background-odd #sched-opp {
   width: 130%;
   margin-left: 2em;
   margin-top: 2em;
 }
-
 #feed #background-odd #status {
   margin-top: 2em;
   margin-left: 6em;
 }
-
 #feed #background-even {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
   background-color: whitesmoke;
   text-align: center;
   height: 5em;
   width: 90%;
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 1em;
   color: black;
 }
-
 #feed #background-even h3 {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   margin: 1em;
   margin-left: 4em;
-  padding-top: .5em;
+  padding-top: 0.5em;
   width: 50%;
   text-align: center;
   border-radius: 20px;
 }
-
 #feed #background-even #sched-opp {
   width: 130%;
   margin-left: 2em;
   margin-top: 2em;
 }
-
 #feed #background-even #status {
   margin-left: 6em;
   margin-top: 2em;
@@ -358,8 +299,6 @@ h2 {
 }
 
 .game-today {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 4em;
   margin-left: 4em;
@@ -367,7 +306,7 @@ h2 {
   margin-bottom: 2em;
   font-size: 1.25em;
   border-radius: 2em;
-  background-color: #b4b4b4;
+  background-color: rgb(180, 180, 180);
   -webkit-animation-name: breathe;
           animation-name: breathe;
   -webkit-animation-duration: 4s;
@@ -377,7 +316,6 @@ h2 {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-
 .game-today #emoji {
   position: absolute;
   margin-left: 3em;
@@ -393,18 +331,15 @@ h2 {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-
 .game-today p {
   padding-top: 10px;
   padding-bottom: 10px;
   color: var(--primary-color);
   margin-left: 6em;
 }
-
 .game-today p #game-live {
-  font-size: .5em;
+  font-size: 0.5em;
 }
-
 .game-today p #game-link {
   text-decoration: underline;
   color: var(--primary-color);
@@ -414,39 +349,31 @@ h2 {
 a {
   color: var(--secondary-color);
   font-style: italic;
-  color: #b4b4b4;
+  color: rgb(180, 180, 180);
 }
 
 @media only screen and (max-width: 500px) {
   #record {
     font-size: medium;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 170px 160px 160px;
-        grid-template-columns: 170px 160px 160px;
+    grid-template-columns: 170px 160px 160px;
     margin-left: 5px;
-    color: #b4b4b4;
+    color: rgb(180, 180, 180);
   }
   #player-stats {
     font-size: 1.25em;
     margin-top: 2em;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
+    justify-content: left;
     margin-left: 1em;
   }
   #stats {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (60px)[8];
-        grid-template-columns: repeat(8, 60px);
+    grid-template-columns: repeat(8, 60px);
     margin: 0;
     margin-top: 1em;
     margin-bottom: -1em;
-    color: #b4b4b4;
+    color: rgb(180, 180, 180);
   }
   #stats #stat-desc {
     border-left: none;
@@ -457,8 +384,6 @@ a {
     padding-left: 1.3em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 1em;
     margin-left: 1em;
@@ -467,7 +392,7 @@ a {
     font-size: 1em;
     width: 90%;
     border-radius: 2em;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -499,7 +424,7 @@ a {
     margin-left: 4em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -507,35 +432,30 @@ a {
     cursor: pointer;
   }
   #news {
-    margin: 0;
+    margin: 1em;
+    margin-left: 2em;
   }
   #next-game {
-    margin-right: .75em;
-    margin-top: .25em;
-    margin-bottom: .25em;
+    margin-right: 0.75em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
   }
   #feed {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     margin-top: 4em;
-    margin-left: .25em;
-    margin-right: 1em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    width: 400px;
   }
   #feed #background-odd {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 150px 150px 150px;
-        grid-template-columns: 150px 150px 150px;
-    background-color: #b4b4b4;
+    grid-template-columns: 150px 150px 150px;
+    background-color: rgb(180, 180, 180);
     text-align: center;
     height: 5em;
     width: 100%;
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 1em;
     color: black;
   }
@@ -544,7 +464,7 @@ a {
     color: var(--secondary-color);
     margin: 1em;
     margin-left: 1em;
-    padding: .5em;
+    padding: 0.5em;
     width: 60%;
     text-align: center;
     border-radius: 20px;
@@ -558,15 +478,13 @@ a {
     margin-left: 1em;
   }
   #feed #background-even {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 150px 150px 150px;
-        grid-template-columns: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
     background-color: whitesmoke;
     text-align: center;
     height: 5em;
     width: 100%;
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 1em;
     color: black;
   }
@@ -575,7 +493,7 @@ a {
     color: var(--primary-color);
     margin: 1em;
     margin-left: 1em;
-    padding: .5em;
+    padding: 0.5em;
     width: 60%;
     text-align: center;
     border-radius: 20px;
@@ -589,10 +507,9 @@ a {
     margin-left: 1em;
   }
 }
-
 @media only screen and (max-width: 400px) {
   #banner {
-    font-size: .75em;
+    font-size: 0.75em;
     width: 20em;
     padding: 1em;
     padding-right: 2em;
@@ -605,47 +522,34 @@ a {
   }
   .flex-container {
     display: flexbox;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     margin: 2em;
     padding: 1em;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     overflow-x: visible;
   }
   #record {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 100px 100px 100px;
-        grid-template-columns: 100px 100px 100px;
-    font-size: .25em;
+    grid-template-columns: 100px 100px 100px;
+    font-size: 0.25em;
     text-align: center;
-    color: #b4b4b4;
+    color: rgb(180, 180, 180);
   }
   #player-stats {
-    font-size: .75em;
+    font-size: 0.75em;
     margin-top: 2em;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
+    justify-content: left;
     margin-left: 1.5em;
   }
   #stats {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (40px)[8];
-        grid-template-columns: repeat(8, 40px);
-    font-size: .25em;
+    grid-template-columns: repeat(8, 40px);
+    font-size: 0.25em;
     width: 100%;
     margin: auto;
     margin-top: 1.5em;
-    color: #b4b4b4;
+    color: rgb(180, 180, 180);
   }
   #stats #stat-desc {
     padding-left: 2em;
@@ -658,17 +562,15 @@ a {
     margin-top: -1px;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    margin-right: .5em;
-    margin-left: .5em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
     margin-top: 1em;
     margin-bottom: 2em;
-    font-size: .75em;
+    font-size: 0.75em;
     width: 80%;
     border-radius: 2em;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -688,7 +590,7 @@ a {
     margin-left: 2.5em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -696,17 +598,17 @@ a {
     cursor: pointer;
   }
   #news #headline {
-    font-size: .75em;
-    margin-left: .5em;
+    font-size: 0.75em;
+    margin-left: 0.5em;
     width: 80%;
   }
   #news #news-date {
     color: whitesmoke;
-    font-size: .65em;
+    font-size: 0.65em;
     margin-left: 1em;
   }
   #news #src {
-    font-size: .65em;
+    font-size: 0.65em;
     margin-left: 1em;
   }
   #next-game {
@@ -715,39 +617,32 @@ a {
     background-color: var(--secondary-color);
     border: none;
     height: 1.5em;
-    font-size: .75em;
-    padding-right: .5em;
-    padding-left: .5em;
+    font-size: 0.75em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
     margin-left: 3em;
     border-radius: 5px;
     float: left;
     cursor: pointer;
   }
   #feed {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 3em;
     margin-right: 3.5em;
   }
   #feed #background-odd {
     display: block;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     text-align: center;
     height: 6em;
     width: 80%;
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 1em;
     color: black;
     padding-bottom: 1.5em;
-    padding-top: .75em;
+    padding-top: 0.75em;
   }
   #feed #background-odd h3 {
     background-color: var(--primary-color);
@@ -760,7 +655,7 @@ a {
   }
   #feed #background-odd #sched-opp {
     margin: auto;
-    margin-bottom: .75em;
+    margin-bottom: 0.75em;
   }
   #feed #background-odd #status {
     margin: auto;
@@ -771,11 +666,11 @@ a {
     text-align: center;
     height: 6em;
     width: 80%;
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 1em;
     color: black;
     padding-bottom: 1.5em;
-    padding-top: .75em;
+    padding-top: 0.75em;
   }
   #feed #background-even h3 {
     background-color: var(--secondary-color);
@@ -788,7 +683,7 @@ a {
   }
   #feed #background-even #sched-opp {
     margin: auto;
-    margin-bottom: .75em;
+    margin-bottom: 0.75em;
   }
   #feed #background-even #status {
     margin: auto;
@@ -805,19 +700,17 @@ a {
   a {
     color: var(--secondary-color);
     font-style: italic;
-    color: #b4b4b4;
+    color: rgb(180, 180, 180);
   }
 }
-
 @media only screen and (min-width: 401px) and (max-width: 499px) {
   #banner {
     width: 95%;
-    margin: .25em;
+    margin: 0.25em;
   }
   #record {
-    -ms-grid-columns: (140px)[3];
-        grid-template-columns: repeat(3, 140px);
-    font-size: .75em;
+    grid-template-columns: repeat(3, 140px);
+    font-size: 0.75em;
     margin-left: 1em;
   }
   #feed #background-odd {
@@ -827,12 +720,10 @@ a {
     width: 450px;
   }
 }
-
 @media only screen and (min-width: 501px) and (max-width: 550px) {
   #record {
-    color: #b4b4b4;
-    -ms-grid-columns: (165px)[3];
-        grid-template-columns: repeat(3, 165px);
+    color: rgb(180, 180, 180);
+    grid-template-columns: repeat(3, 165px);
     margin: auto;
   }
   #player-stats {
@@ -841,8 +732,7 @@ a {
   }
   #stats {
     margin: auto;
-    -ms-grid-columns: (50px)[8];
-        grid-template-columns: repeat(8, 50px);
+    grid-template-columns: repeat(8, 50px);
   }
   #news {
     margin: auto;
@@ -852,8 +742,6 @@ a {
     margin: auto;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 1em;
     margin-left: 1em;
@@ -861,7 +749,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 2em;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -893,7 +781,7 @@ a {
     margin-left: 4.5em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -904,8 +792,7 @@ a {
     margin-right: 2.5em;
   }
   #feed #background-odd {
-    -ms-grid-columns: (125px)[3];
-        grid-template-columns: repeat(3, 125px);
+    grid-template-columns: repeat(3, 125px);
   }
   #feed #background-odd h3 {
     margin-left: 1em;
@@ -919,8 +806,7 @@ a {
     margin-left: 4em;
   }
   #feed #background-even {
-    -ms-grid-columns: (125px)[3];
-        grid-template-columns: repeat(3, 125px);
+    grid-template-columns: repeat(3, 125px);
   }
   #feed #background-even h3 {
     margin-left: 1em;
@@ -934,23 +820,18 @@ a {
     margin-left: 4em;
   }
 }
-
 @media only screen and (min-width: 551px) and (max-width: 600px) {
   #record {
-    -ms-grid-columns: (185px)[3];
-        grid-template-columns: repeat(3, 185px);
+    grid-template-columns: repeat(3, 185px);
   }
   #player-stats {
     margin-left: 1em;
   }
   #stats {
-    -ms-grid-columns: (65px)[8];
-        grid-template-columns: repeat(8, 65px);
+    grid-template-columns: repeat(8, 65px);
     margin-left: 1.5em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 2em;
     margin-left: 2em;
@@ -958,7 +839,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 2em;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -990,7 +871,7 @@ a {
     margin-left: 6em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1005,8 +886,7 @@ a {
     margin-right: 3em;
   }
   #feed #background-odd {
-    -ms-grid-columns: (150px)[3];
-        grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(3, 150px);
   }
   #feed #background-odd h3 {
     margin-left: 1em;
@@ -1020,8 +900,7 @@ a {
     margin-left: 4em;
   }
   #feed #background-even {
-    -ms-grid-columns: (150px)[3];
-        grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(3, 150px);
   }
   #feed #background-even h3 {
     margin-left: 1em;
@@ -1035,18 +914,15 @@ a {
     margin-left: 4em;
   }
 }
-
 @media only screen and (min-width: 601px) and (max-width: 725px) {
   #record {
-    -ms-grid-columns: (210px)[3];
-        grid-template-columns: repeat(3, 210px);
+    grid-template-columns: repeat(3, 210px);
   }
   #player-stats {
     margin-left: 2em;
   }
   #stats {
-    -ms-grid-columns: (70px)[8];
-        grid-template-columns: repeat(8, 70px);
+    grid-template-columns: repeat(8, 70px);
     margin-left: 2.5em;
   }
   #news #headline {
@@ -1054,8 +930,6 @@ a {
     margin: auto;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 2em;
     margin-left: 2em;
@@ -1063,7 +937,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 25px;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -1095,7 +969,7 @@ a {
     margin-left: 5.5em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1106,8 +980,7 @@ a {
     margin-right: 3.25em;
   }
   #feed #background-odd {
-    -ms-grid-columns: (160px)[3];
-        grid-template-columns: repeat(3, 160px);
+    grid-template-columns: repeat(3, 160px);
   }
   #feed #background-odd h3 {
     width: 6em;
@@ -1121,8 +994,7 @@ a {
     margin-left: 6em;
   }
   #feed #background-even {
-    -ms-grid-columns: (160px)[3];
-        grid-template-columns: repeat(3, 160px);
+    grid-template-columns: repeat(3, 160px);
   }
   #feed #background-even h3 {
     width: 6em;
@@ -1136,15 +1008,12 @@ a {
     margin-left: 6em;
   }
 }
-
 @media only screen and (min-width: 726px) and (max-width: 850px) {
   #record {
-    -ms-grid-columns: (250px)[3];
-        grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(3, 250px);
   }
   #stats {
-    -ms-grid-columns: (80px)[8];
-        grid-template-columns: repeat(8, 80px);
+    grid-template-columns: repeat(8, 80px);
     margin-left: 4em;
   }
   #news {
@@ -1154,14 +1023,12 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #news #src {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 2em;
     margin-left: 2em;
@@ -1169,7 +1036,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 25px;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -1201,7 +1068,7 @@ a {
     margin-left: 6em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1209,8 +1076,7 @@ a {
     cursor: pointer;
   }
   #feed #background-odd {
-    -ms-grid-columns: (210px)[3];
-        grid-template-columns: repeat(3, 210px);
+    grid-template-columns: repeat(3, 210px);
   }
   #feed #background-odd h3 {
     margin-left: 2em;
@@ -1224,8 +1090,7 @@ a {
     margin-left: 6em;
   }
   #feed #background-even {
-    -ms-grid-columns: (210px)[3];
-        grid-template-columns: repeat(3, 210px);
+    grid-template-columns: repeat(3, 210px);
   }
   #feed #background-even h3 {
     margin-left: 2em;
@@ -1239,15 +1104,12 @@ a {
     margin-left: 6em;
   }
 }
-
 @media only screen and (min-width: 851px) and (max-width: 1000px) {
   #record {
-    -ms-grid-columns: (300px)[3];
-        grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(3, 300px);
   }
   #stats {
-    -ms-grid-columns: (110px)[8];
-        grid-template-columns: repeat(8, 110px);
+    grid-template-columns: repeat(8, 110px);
     margin-left: 1em;
   }
   #news {
@@ -1257,14 +1119,12 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #news #src {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 4em;
     margin-left: 4em;
@@ -1272,7 +1132,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 25px;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -1304,7 +1164,7 @@ a {
     margin-left: 10em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1315,8 +1175,7 @@ a {
     margin-right: 5.25em;
   }
   #feed #background-odd {
-    -ms-grid-columns: (250px)[3];
-        grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(3, 250px);
   }
   #feed #background-odd #sched-opp {
     margin-left: 2em;
@@ -1325,8 +1184,7 @@ a {
     margin-left: 4em;
   }
   #feed #background-even {
-    -ms-grid-columns: (250px)[3];
-        grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(3, 250px);
   }
   #feed #background-even #sched-opp {
     margin-left: 2em;
@@ -1335,15 +1193,12 @@ a {
     margin-left: 4em;
   }
 }
-
 @media only screen and (min-width: 1001px) and (max-width: 1199px) {
   #record {
-    -ms-grid-columns: (350px)[3];
-        grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(3, 350px);
   }
   #stats {
-    -ms-grid-columns: (120px)[8];
-        grid-template-columns: repeat(8, 120px);
+    grid-template-columns: repeat(8, 120px);
     margin-left: 2em;
   }
   #news {
@@ -1353,14 +1208,12 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #news #src {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 6em;
     margin-left: 6em;
@@ -1368,7 +1221,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 25px;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -1400,7 +1253,7 @@ a {
     margin-left: 12em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1414,22 +1267,18 @@ a {
     margin-left: 3em;
   }
   #feed #background-odd {
-    -ms-grid-columns: (300px)[3];
-        grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(3, 300px);
   }
   #feed #background-even {
-    -ms-grid-columns: (300px)[3];
-        grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(3, 300px);
   }
 }
-
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   #banner {
     font-size: 1.75em;
   }
   #record {
-    -ms-grid-columns: (400px)[3];
-        grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 400px);
     font-size: 1.25em;
   }
   #player-stats {
@@ -1439,14 +1288,11 @@ a {
     font-size: 2em;
   }
   #stats {
-    -ms-grid-columns: (150px)[8];
-        grid-template-columns: repeat(8, 150px);
+    grid-template-columns: repeat(8, 150px);
     margin-left: 2em;
     font-size: 1.25em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 6em;
     margin-left: 6em;
@@ -1454,7 +1300,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 25px;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -1487,7 +1333,7 @@ a {
     margin-left: 12em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1504,21 +1350,18 @@ a {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #news #src {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #feed {
     margin-left: 3em;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 600px 0px 0px 600px;
-        grid-template-columns: 600px 0px 0px 600px;
+    grid-template-columns: 600px 0px 0px 600px;
   }
   #feed #background-odd {
-    -ms-grid-columns: (150px)[3];
-        grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(3, 150px);
     width: 500px;
     margin: auto;
     margin-bottom: 1em;
@@ -1531,8 +1374,7 @@ a {
     margin-left: 2em;
   }
   #feed #background-even {
-    -ms-grid-columns: (150px)[3];
-        grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(3, 150px);
     width: 500px;
     margin: auto;
     margin-bottom: 1em;
@@ -1545,16 +1387,14 @@ a {
     margin-left: 2em;
   }
 }
-
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
   #banner {
     font-size: 2.25em;
-    word-spacing: .25em;
+    word-spacing: 0.25em;
     padding: 1.5em;
   }
   #record {
-    -ms-grid-columns: (450px)[3];
-        grid-template-columns: repeat(3, 450px);
+    grid-template-columns: repeat(3, 450px);
     font-size: 1.45em;
     margin-left: 1.25em;
   }
@@ -1566,8 +1406,7 @@ a {
     font-size: 2em;
   }
   #stats {
-    -ms-grid-columns: (165px)[8];
-        grid-template-columns: repeat(8, 165px);
+    grid-template-columns: repeat(8, 165px);
     margin-left: 3em;
     font-size: 1.25em;
     margin-top: 2em;
@@ -1579,8 +1418,6 @@ a {
     padding-left: 3.25em;
   }
   .game-today {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 2em;
     margin-left: 2em;
@@ -1588,7 +1425,7 @@ a {
     margin-bottom: 2em;
     font-size: 1.25em;
     border-radius: 25px;
-    background-color: #b4b4b4;
+    background-color: rgb(180, 180, 180);
     -webkit-animation-name: breathe;
             animation-name: breathe;
     -webkit-animation-duration: 4s;
@@ -1621,7 +1458,7 @@ a {
     margin-left: 12em;
   }
   .game-today p #game-live {
-    font-size: .5em;
+    font-size: 0.5em;
   }
   .game-today p #game-link {
     text-decoration: underline;
@@ -1629,12 +1466,10 @@ a {
     cursor: pointer;
   }
   #news {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 600px 600px;
-        grid-template-columns: 600px 600px;
-    -webkit-column-gap: 100px;
-            column-gap: 100px;
+    grid-template-columns: 600px 600px;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
     row-gap: 75px;
     text-align: center;
     margin-left: 5em;
@@ -1643,16 +1478,16 @@ a {
     width: 90%;
   }
   #news .news-div:last-child:nth-last-child(odd) {
-    grid-column: auto / span 2;
+    grid-column: auto/span 2;
   }
   #news #headline {
     font-size: 2em;
   }
   #news #news-date {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #news #src {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   #next-game {
     margin-right: 8em;
@@ -1663,16 +1498,13 @@ a {
   #feed {
     margin-left: 2em;
     margin-right: 2em;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 600px 0px 0px 600px;
-        grid-template-columns: 600px 0px 0px 600px;
-    -webkit-column-gap: 3em;
-            column-gap: 3em;
+    grid-template-columns: 600px 0px 0px 600px;
+    -moz-column-gap: 3em;
+         column-gap: 3em;
   }
   #feed #background-odd {
-    -ms-grid-columns: (200px)[3];
-        grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, 200px);
     width: 650px;
     margin: auto;
     margin-bottom: 1em;
@@ -1686,8 +1518,7 @@ a {
     margin-left: 1em;
   }
   #feed #background-even {
-    -ms-grid-columns: (200px)[3];
-        grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, 200px);
     width: 650px;
     margin: auto;
     margin-bottom: 1em;
@@ -1700,5 +1531,4 @@ a {
     width: 120%;
     margin-left: 1em;
   }
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
