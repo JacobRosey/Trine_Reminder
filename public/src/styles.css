@@ -601,9 +601,7 @@ a {
     cursor: pointer;
   }
   #news {
-    display: flex;
-    flex-direction: column;
-    margin-right: 4em;
+    align-self: left;
   }
   #news #headline {
     font-size: 0.75em;
