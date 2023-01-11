@@ -620,7 +620,7 @@ a{
     #feed{
         display: flex;
         flex-direction: column;
-        align-items: left;
+        align-items: center;
         margin-top: 3em;
         margin: .25em;
 
@@ -700,6 +700,10 @@ a{
 }
 
 @media only screen and (min-width: 401px) and (max-width: 499px){
+    html, body{
+        width: 100%;
+        overflow-x: hidden;
+    }
     #banner{
         width: 95%;
         margin: .25em;
@@ -710,11 +714,12 @@ a{
         margin-left: 1em;
     }
     #feed{
+        width: 100%;
         #background-odd{
-            width: 450px;
+            width: 90%;
         }
         #background-even{
-            width: 450px;
+            width: 90%;
         }
     }
 }
