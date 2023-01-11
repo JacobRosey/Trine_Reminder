@@ -601,7 +601,7 @@ a {
     cursor: pointer;
   }
   #news {
-    margin-right: 5em;
+    margin: auto;
   }
   #news #headline {
     font-size: 0.75em;
@@ -636,7 +636,7 @@ a {
     flex-direction: column;
     align-items: center;
     margin-top: 3em;
-    margin-right: 5em;
+    margin: auto;
   }
   #feed #background-odd {
     display: block;
