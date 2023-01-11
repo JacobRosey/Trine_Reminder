@@ -324,15 +324,12 @@ a{
 
 @media only screen and (max-width: 400px) {
  
-#news{
-    width: 50%;
-}
 #feed{
     display: flex;
     flex-direction: column;
     margin-top: 4em;
     margin-left: 2em;
-    width: 50%;
+    width: 400px;
 
     #background-odd{
         display: grid;
