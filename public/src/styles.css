@@ -606,7 +606,7 @@ a {
   }
   #news {
     display: flex;
-    align-items: center;
+    align-items: left;
   }
   #news #headline {
     font-size: 0.75em;
