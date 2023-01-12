@@ -605,8 +605,7 @@ a {
     cursor: pointer;
   }
   #news {
-    display: flex;
-    align-items: left;
+    margin-left: -2em;
   }
   #news #headline {
     font-size: 0.75em;

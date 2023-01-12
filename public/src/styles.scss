@@ -585,8 +585,7 @@ a{
         }
     }
     #news{
-        display: flex;
-        align-items: left;
+        margin-left: -2em;
         #headline{
             font-size: .75em;
             width: 80%;
