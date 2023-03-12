@@ -11,7 +11,7 @@ const app = express()
 app.use(cors())
                             //Just change to 2023-24 for next season
 const schedule = 'https://www.trinethunder.com/sports/sball/2022-23/schedule'
-const news = 'https://www.trinethunder.com/sports/sball/2021-22/news'
+const news = 'https://www.trinethunder.com/sports/sball/2022-23/news'
 const players = 'https://www.trinethunder.com/sports/sball/2022-23/teams/trine?view=roster'
 const playerStats = 'https://www.trinethunder.com'
 
