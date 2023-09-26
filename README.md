@@ -9,6 +9,6 @@ See how it looks @ https://trine-scraper.herokuapp.com/.
 Also available for download as a progressive web app.
 
 
-NOTE: site should be mostly readable across screen sizes; however, I don't have time to perfect everything across all devices. If some of the content gets cut off, please resize the window, change to landscape mode or try on another device.
+NOTE: site should be mostly readable across screen sizes; however, I don't have time to perfect everything across all devices (this app was made before I started using bootstrap). If some of the content gets cut off, please resize the window, change to landscape mode or try on another device.
 
 Thank you for checking it out!
